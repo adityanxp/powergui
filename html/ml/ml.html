@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<!-- /* Copyright 2019 NXP
+
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions
+are met:
+1. Redistributions of source code must retain the above copyright
+   notice, this list of conditions and the following disclaimer.
+2. Redistributions in binary form must reproduce the above copyright
+   notice, this list of conditions and the following disclaimer in the
+   documentation and/or other materials provided with the distribution.
+3. Neither the name of the copyright holders nor the names of its
+   contributors may be used to endorse or promote products derived from
+   this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS  AND CONTRIBUTORS
+``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+A PARTICULAR PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR
+CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. */ -->
+
+<html lang="en">
+
+<head>
+    <link rel="icon" type="image/x-icon" href="assets/images/logo.png">
+    <title>NXP || Machine Learning/Video Analytics</title>    
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=7">
+<!--Core CSS Files-->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap-theme.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/Power-gui.css" />
+    
+    <style>
+        @media (max-width: 1024px) {
+                .row
+                {
+                    margin-right: -15px;
+                }
+		#docker{
+			margin-top:-200px;
+		}
+
+            }
+        body.modal-open{
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body style="overflow-x:hidden;background-color: white">
+
+  <div class="out-container row " id="header">
+            <div class="col-lg-2  text-center hidden-md hidden-xs hidden-sm" id="left">  
+                <aside class="sidebar-left">
+                        <ul class="sidenav text-center" >
+                          <li style="    border-right-color: black;
+                          border-right-style: solid;background-color: #354957;padding-bottom:7px;"><a href="../index.html">
+                              <img class="logotwice" src="assets/images/logo.png" alt="NXP" />
+                            <br><sub>version  2.0.0</sub></a>
+                           </li>
+                            <li style="margin-top:10px;"><a class="font17 " href="../CPU/cpu.html">
+                                    <img class="logotwice " src="assets/images/CPU-Performance.png" alt="NXP" />
+                                    <br><sub > CPU Performance</sub>
+                                </a></li>
+                            <li><a class="font17 " href="../refrigerator/fridge.html">
+                                <img class="logotwice " src="assets/images/Data-Analytics.png" alt="NXP" />
+                                <br><sub >Data Analytics </sub>
+                            </a></li>
+                            <!-- <li><a class="font17 " href="../sensor/sensor.html">
+                                    <img class="logotwice" src="assets/images/Data Analytics Generation 2.png" alt="NXP" />
+                                    <br><sub>Sensor Data Analytics</sub>
+                                </a></li> -->
+                            <li><a class="font17 active" href="ml.html">
+                                    <img class="logotwice active" src="assets/images/Machine-Learning-Video-Analytics.png" alt="NXP" />
+                                    <br><sub class="active text-center">Machine Learning/Video Analytics</sub>
+                                </a></li>
+                            <li><a class="font17 " href="../videovault/videovault.html">
+                                    <img class="logotwice" src="assets/images/Video-Vault.png"  alt="NXP" />
+                                    <br><sub>Video Vault</sub>
+                                </a></li>
+                          </ul>
+                </aside>
+            </div>
+
+            <div class="col-lg-10 col-md-12 col-sm-12 col-xs-12" id="ml" >
+                <div class="row" id="header_fridge">
+                        <div onclick=" $('body').addClass('modal-open');$('#nav-tab').show();" class="hidden-lg col-md-1 col-sm-1 col-xs-2 ">
+                                <div style=" height: 5px; background-color: black;margin: 6px 0;" ></div>
+                                <div style=" height: 5px; background-color: black;margin: 6px 0;" ></div>
+                                <div style=" height: 5px; background-color: black;margin: 6px 0;" ></div>
+                        </div>
+                        
+                        <div class="hidden-lg col-md-3 col-sm-3 col-xs-8 text-center "  >
+                                <h3>FRWY-LS1046A</h3>
+                            </div>
+                        <div class="col-lg-2 hidden-md hidden-sm hidden-xs text-left "  >
+                            <h3>FRWY-LS1046A</h3>
+                        </div>
+                            <div class="col-lg-10 hidden-md hidden-sm hidden-xs  text-center" >
+                                    <div class="col-lg-7   text-center" >
+                                            <h3>Machine Learning/Video Analytics</h3>
+                                    </div>
+                                    <div class=" col-lg-2 ">
+                                            <a href="javascript:void(0)" class="btn btn-danger" onclick="window.open(window.location.origin + ':19999/');">Detailed CPU Anaylsis</a>
+                                    </div>
+                            </div>
+                            <div class="hidden-lg col-md-6 col-sm-4 col-xs-12  text-center" >
+                                    <h3>Machine Learning/Video Analytics</h3>
+                            </div>
+                            <div class="hidden-lg col-md-2 col-sm-4 col-xs-12 text-center">
+                                    <a href="javascript:void(0)" class="btn btn-danger" onclick="window.open(window.location.origin + ':19999/');">Detailed CPU Anaylsis</a>
+                            </div>
+                </div>
+                <div class="row" id="body_fridge">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center "  >
+                                <div class="row" >
+                                        <!-- <div class=" col-lg-6 col-md-5 col-sm-7 col-xs-7 ">
+                                            <div class ="docker1"><img class="active" id="docker1_start" onclick="startdemo('1');" src="assets/images/Face Recognition Demo.png" alt="Industrial-Market---LS1028A-features" class="img-responsive videoImage"
+                                                style="cursor:pointer;"></div>
+                                            <div class ="docker1"><img class="hidden"  id="docker1_stop" onclick="stopdemo('1');" src="assets/images/Face Recognition Demo stop.png" alt="Industrial-Market---LS1028A-features" class="img-responsive videoImage"
+                                                style="cursor:pointer;"></div>
+                                        </div> -->
+                                        <div class=" col-lg-6 col-md-5 col-sm-7 col-xs-7 ">
+                                            <div class ="docker2"><img class="active" id="docker2_start" onclick="startdemo('2');" src="assets/images/Live People Counting Demo.png" alt="Industrial-TSN-features" class="img-responsive videoImage"
+                                                style="cursor:pointer"> </div> 
+                                            <div class ="docker2"><img class="hidden"  id="docker2_stop" onclick="stopdemo('2');" src="assets/images/Live People Counting Demo stop.png" alt="Industrial-TSN-features" class="img-responsive videoImage"
+                                                style="cursor:pointer"> </div>   
+                                        </div>
+                                        <div class=" col-lg-6 col-md-5 col-sm-7 col-xs-7 ">
+                                            <div class ="docker3"><img class="active" id="docker3_start" onclick="startdemo('3');" src="assets/images/Object Detection & Counting Demo.png" alt="Industrial-Market---LS1028A-features" class="img-responsive videoImage"
+                                                style="cursor:pointer;"></div>
+                                            <div class ="docker3"><img class="hidden"  id="docker3_stop" onclick="stopdemo('3');" src="assets/images/Object Detection & Counting Demo stop.png" alt="Industrial-Market---LS1028A-features" class="img-responsive videoImage"
+                                                style="cursor:pointer;"></div>
+                                        </div>
+                                </div>
+                                <!-- <div class="row" >
+                                        <div class=" col-lg-6 col-md-5 col-sm-7 col-xs-7 ">
+                                            <div class ="docker3"><img class="active" id="docker3_start" onclick="startdemo('3');" src="assets/images/Object Detection & Counting Demo.png" alt="Industrial-Market---LS1028A-features" class="img-responsive videoImage"
+                                                style="cursor:pointer;"></div>
+                                            <div class ="docker3"><img class="hidden"  id="docker3_stop" onclick="stopdemo('3');" src="assets/images/Object Detection & Counting Demo stop.png" alt="Industrial-Market---LS1028A-features" class="img-responsive videoImage"
+                                                style="cursor:pointer;"></divs>
+                                        </div>
+                                </div> -->
+                        </div>
+                </div>
+
+            </div>
+            <!--<div id="docker" class="modal fade session" role="dialog" data-backdrop="static" data-keyboard="false">
+                <div class="modal-lg padding-top-140">
+                   
+                    <div class="removeModal">
+                        <div class="modal-body text-center" style="padding-top:0px!important">
+                     
+                            <img src="assets/images/loader.gif" alt="Industrial-Market---LS1028A-features">
+                             
+                       <p class="text-center loadertext"></p> 									
+                        </div>
+                    </div>
+                </div>
+	    </div> -->
+            <div id="nav-tab" class="modal fade session "  role="dialog" data-backdrop="static" data-keyboard="false">
+                    <div class="modal-lg padding-top-140" style="margin-top:-150px;">
+                        <!-- Modal content-->
+                        <div class="removeModal">
+                            <div class="modal-body">
+                                    <div style="height: -webkit-fill-available;
+                                    overflow: scroll; display: block">
+                                    <aside class="sidebar-left">
+                                            <ul class="sidenav text-center" >
+                                              <li style="    border-right-color: black;
+                                              border-right-style: solid;background-color: #354957;padding-bottom:7px;"><a href="../index.html">
+                                                  <img class="logotwice" src="assets/images/logo.png" alt="NXP" />
+                                                <br><sub>version  2.0.0</sub></a>
+                                               </li>
+                                                <li style="margin-top:10px;"><a class="font17 " href="../CPU/cpu.html">
+                                                        <img class="logotwice " src="assets/images/CPU-Performance.png" alt="NXP" />
+                                                        <br><sub > CPU Performance</sub>
+                                                    </a></li>
+                                                <li><a class="font17 " href="../refrigerator/fridge.html">
+                                                    <img class="logotwice " src="assets/images/Data-Analytics.png" alt="NXP" />
+                                                    <br><sub >Data Analytics</sub>
+                                                </a></li>
+                                                <!-- <li><a class="font17 " href="../sensor/sensor.html">
+                                                        <img class="logotwice" src="assets/images/Data Analytics Generation 2.png" alt="NXP" />
+                                                        <br><sub>Sensor Data Analytics</sub>
+                                                    </a></li> -->
+                                                <li><a class="font17 active" href="ml.html">
+                                                        <img class="logotwice active" src="assets/images/Machine-Learning-Video-Analytics.png" alt="NXP" />
+                                                        <br><sub class="active text-center">Machine Learning/Video Analytics</sub>
+                                                    </a></li>
+                                                <li><a class="font17 " href="../videovault/videovault.html">
+                                                        <img class="logotwice" src="assets/images/Video-Vault.png"  alt="NXP" />
+                                                        <br><sub>Video Vault</sub>
+                                                    </a></li>
+                                                        <li style="margin:10px;"><button class="font17 btn btn-warning" onclick=" $('body').removeClass('modal-open');$('#nav-tab').hide();">EXIT</button>
+                                            
+                                              </ul>
+                                    </aside>
+                                    </div>								
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+  </div>
+  <div class="modal " id="camera_notconnect" style="background-color:#00000094; ">
+    <div class="modal-dialog" style="margin-top:150px;">
+    
+      <!-- Modal content-->
+      <div class="modal-content" style="margin-top:40px; ">
+        <!-- <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+	  <h4 class="modal-title">Modal Header</h4>
+	  </div> -->
+	  <div class="modal-body text-center">
+		  <b><p style="font-size : 16px;">Please check if camera is connected properly !!!</p></b>
+	  </div>
+	  <div class="modal-footer text-center" style="    margin-top: 0px;
+	  padding: 10px;">
+		  <button type="button" class="btn btn-primary" onclick='$("#camera_notconnect").hide();'>OK</button>
+	  </div>
+      </div>
+
+    </div>
+  </div>
+  
+  <div id="docker" class="modal fade session" role="dialog" style="margin-top:-100px;" data-backdrop="static" data-keyboard="false">
+	  <div class="modal-lg padding-top-140">
+		  <!-- Modal content-->
+		  <div class="removeModal">
+			  <div class="modal-body text-center" style="padding-top:0px!important">
+
+				  <img style="height:250px;"  src="assets/images/loader.gif" alt="Industrial-Market---LS1028A-feature">
+				  <p class="text-center loadertext"></p>
+			  </div>
+		  </div>
+	  </div>
+  </div> 
+
+    <!--Core Javascript Files-->
+    <script type="text/javascript" src="assets/js/jquery.js"></script>
+    <script>
+
+        $(document).ready(function () 
+		{
+			for(var i=2;i<4;i++)
+                            {
+
+		 	//	$("#docker"+i+"_start").addClass("hidden");
+                          //      $("#docker"+i+"_stop").removeClass("hidden");
+                                $(".docker"+i).css("cursor","not-allowed");
+                                $("#docker"+i+"_start").css("pointer-events","none");
+			    }
+            $("#camera_notconnect").hide();
+            $.ajax({
+                    url: "http://" + window.location.host + "/network.php?val=9",
+                    cache: false,
+                    success: function(data){
+			    for(var i=2;i<4;i++)
+			    {
+			//	$("#docker"+i+"_start").removeClass("hidden");
+                             //   $("#docker"+i+"_stop").addClass("hidden");
+                                $(".docker"+i).css("cursor","default");
+                                $("#docker"+i+"_start").css("pointer-events","");
+                               
+			    }
+                    },
+                    error:function(data){
+                       // console.log("error"+data);
+                    }
+                });
+        });
+        function startdemo(docker)
+        {
+            $('body').removeClass('modal-open');
+            $(".loadertext").text("Please wait for 10 sec , while docker is loading !!!");
+		    $('body').addClass('modal-open');
+            $("#docker").show();         
+            $.ajax({
+                    url: "http://" + window.location.host + "/ml/ml.php?docker="+docker+"&val=1",
+                    cache: false,
+                    dataType: "json",
+                    success: function(data){
+                        if(data.status == "true")
+                        {
+                            if(docker == 1) 
+                            {
+                                $("#docker"+docker+"_start").addClass("hidden");
+                                $("#docker"+docker+"_stop").removeClass("hidden");
+                                $(".docker"+docker).css("cursor","default");
+                                $("#docker"+docker+"_start").css("pointer-events","");
+                                $(".docker2").css("cursor","not-allowed");
+                                $("#docker2_start").css("pointer-events","none");
+                                $(".docker3").css("cursor","not-allowed");
+                                $("#docker3_start").css("pointer-events","none");
+
+                                $(".loadertext").text("");
+				                $('body').removeClass('modal-open');
+                                $("#docker").hide();
+				                window.open( "http://" + window.location.host +":5000");
+
+                            }
+                            else if(docker == 2)
+                            {
+                                $("#docker"+docker+"_start").addClass("hidden");
+                                $("#docker"+docker+"_stop").removeClass("hidden");
+                                $(".docker"+docker).css("cursor","default");
+                                $("#docker"+docker+"_start").css("pointer-events","");
+                                $(".docker1").css("cursor","not-allowed");
+                                $("#docker1_start").css("pointer-events","none");
+                                $(".docker3").css("cursor","not-allowed");
+                                $("#docker3_start").css("pointer-events","none");
+
+                                $(".loadertext").text("");
+				                $('body').removeClass('modal-open');
+                                $("#docker").hide();
+                                window.open( "http://" + window.location.host +":5000");
+                            }
+                            
+                            else if(docker == 3)
+                            {
+                                $("#docker"+docker+"_start").addClass("hidden");
+                                $("#docker"+docker+"_stop").removeClass("hidden");
+                                $(".docker"+docker).css("cursor","default");
+                                $("#docker"+docker+"_start").css("pointer-events","");
+                                $(".docker2").css("cursor","not-allowed");
+                                $("#docker2_start").css("pointer-events","none");
+                                $(".docker1").css("cursor","not-allowed");
+                                $("#docker1_start").css("pointer-events","none");
+                                
+                                $(".loadertext").text("");
+				                $('body').removeClass('modal-open');
+                                $("#docker").hide();
+                                window.open( "http://" + window.location.host +":5000");
+                            }
+                        }
+                        else
+                        {
+                            $(".loadertext").text("");
+                            $('body').removeClass('modal-open');
+                            $("#docker").hide();
+                            $("#camera_notconnect").show();
+                        }
+                    },
+                    error:function(data){
+                        $(".loadertext").text("");
+                        $("#docker").hide();
+                        $('body').removeClass('modal-open');
+                        $("#camera_notconnect").show();
+                       // console.log("error"+data);
+                    }
+                });
+        }
+
+        function stopdemo(docker)
+        {
+            $('body').removeClass('modal-open');
+            $(".loadertext").text("Please wait , while docker is stopping !!!");
+            $('body').addClass('modal-open');
+            $("#docker").show();   
+            $.ajax({
+                    url: "http://" + window.location.host + "/ml/ml.php?docker="+docker+"&val=2",
+                    cache: false,
+                    dataType: "json",
+                    success: function(data){
+                        if(data.status == "true")
+                        {
+                            if(docker == 1) 
+                        {
+                            $("#docker"+docker+"_stop").addClass("hidden");
+                            $("#docker"+docker+"_start").removeClass("hidden");
+                            $(".docker"+docker).css("cursor","default");
+                            $("#docker"+docker+"_start").css("pointer-events","");
+                            $(".docker2").css("cursor","default");
+                            $("#docker2_start").css("pointer-events","");
+                            $(".docker3").css("cursor","default");
+                            $("#docker3_start").css("pointer-events","");
+                            $(".loadertext").text("");
+                            $('body').removeClass('modal-open');
+                            $("#docker").hide();
+
+                        }
+                        else if(docker == 2)
+                        {
+                            $("#docker"+docker+"_stop").addClass("hidden");
+                            $("#docker"+docker+"_start").removeClass("hidden");
+                            $(".docker"+docker).css("cursor","default");
+                            $("#docker"+docker+"_start").css("pointer-events","");
+                            $(".docker1").css("cursor","default");
+                            $("#docker1_start").css("pointer-events","");
+                            $(".docker3").css("cursor","default");
+                            $("#docker3_start").css("pointer-events","");
+                            $(".loadertext").text("");
+                            $('body').removeClass('modal-open');
+                            $("#docker").hide();
+                        }
+                        
+                        else if(docker == 3)
+                        {
+                            $("#docker"+docker+"_stop").addClass("hidden");
+                            $("#docker"+docker+"_start").removeClass("hidden");
+                            $(".docker"+docker).css("cursor","default");
+                            $("#docker"+docker+"_start").css("pointer-events","");
+                            $(".docker2").css("cursor","default");
+                            $("#docker2_start").css("pointer-events","");
+                            $(".docker1").css("cursor","default");
+                            $("#docker1_start").css("pointer-events","");
+                            $(".loadertext").text("");
+                            $('body').removeClass('modal-open');
+                            $("#docker").hide();
+                        }
+                        
+                        }
+                        else
+                        {
+                            $(".loadertext").text("");
+                            $('body').removeClass('modal-open');
+                            $("#docker").hide();
+                        }
+                        
+                    },
+                    error:function(data){
+                        $(".loadertext").text("");
+                            $("#docker").hide();
+                       // console.log("error"+data);
+                    }
+                });
+        }
+    </script>
+</body>
+
+</html>

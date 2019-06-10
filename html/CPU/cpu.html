@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<!-- /* Copyright 2019 NXP
+
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions
+are met:
+1. Redistributions of source code must retain the above copyright
+   notice, this list of conditions and the following disclaimer.
+2. Redistributions in binary form must reproduce the above copyright
+   notice, this list of conditions and the following disclaimer in the
+   documentation and/or other materials provided with the distribution.
+3. Neither the name of the copyright holders nor the names of its
+   contributors may be used to endorse or promote products derived from
+   this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS  AND CONTRIBUTORS
+``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+A PARTICULAR PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR
+CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. */ -->
+
+<html lang="en">
+
+<head>
+    <title>NXP || CPU Performance</title>    
+    <link rel="icon" type="image/x-icon" href="assets/images/logo.png">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=7">
+<!--Core CSS Files-->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap-theme.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/Power-gui.css" />
+    
+        <style>
+            @media (max-width: 1025px){
+            #create{
+                height: 150px;
+            }
+            }
+            
+        body.modal-open{
+           overflow: hidden;
+        }
+        </style>
+</head>
+
+<body style="overflow-x:hidden;background-color: #354957">
+
+  <div class="out-container row " id="header">
+            <div class="col-lg-2 hidden-md hidden-sm hidden-xs text-center" id="left">  
+                <aside class="sidebar-left">
+                        <ul class="sidenav text-center" >
+                          <li style="   padding-bottom: 7px; border-right-color: black;
+                          border-right-style: solid;background-color: #354957;"><a href="../index.html">
+                              <img class="logotwice" src="assets/images/logo.png" alt="NXP" />
+                            <br><sub >version  2.0.0</sub></a>
+                           </li>
+                            <li style="margin-top:10px;"><a class="font17 active" href="cpu.html">
+                                    <img class="logotwice active" src="assets/images/CPU-Performance.png" alt="NXP" />
+                                    <br><sub class="active text-center"> CPU Performance</sub>
+                                </a></li>
+                            <li><a class="font17" href="../refrigerator/fridge.html">
+                                <img class="logotwice" src="assets/images/Data-Analytics.png" alt="NXP" />
+                                <br><sub>Data Analytics </sub>
+                            </a></li>
+                            <!-- <li><a class="font17 " href="../sensor/sensor.html">
+                                <img class="logotwice" src="assets/images/Data Analytics Generation 2.png" alt="NXP" />
+                                <br><sub>Sensor Data Analytics</sub>
+                            </a></li> -->
+                            <li><a class="font17" href="../ml/ml.html">
+                                    <img class="logotwice" src="assets/images/Machine-Learning-Video-Analytics.png" alt="NXP" />
+                                    <br><sub>Machine Learning/Video Analytics</sub>
+                                </a></li>
+                            <li><a class="font17 " href="../videovault/videovault.html">
+                                    <img class="logotwice" src="assets/images/Video-Vault.png" alt="NXP" />
+                                    <br><sub>Video Vault</sub>
+                                </a></li>
+                            
+                          </ul>
+                </aside>
+            </div>
+            <!-- <div class="hidden-lg col-md-12 col-sm-12 col-xs-12 text-center" >  
+                    <div style=" height: 5px; background-color: black;margin: 6px 0;"onclick=" $('body').addClass('modal-open');$('#nav-tab').show();">
+                       </div>
+            </div> -->
+            
+                <div class="col-lg-2 col-md-12 col-sm-12 col-xs-12 text-center fixed"  >
+                        <div class="row hidden-lg" id="mid-text" style="padding-bottom:30px;">
+                                <div class="col-md-1 col-sm-1 col-xs-1 "></div>
+                                        <div onclick=" $('body').addClass('modal-open');$('#nav-tab').show();" class="hiddden-lg col-md-1 col-sm-1 col-xs-2 ">
+                                                <div style=" height: 5px; background-color: black;margin: 6px 0;" ></div>
+                                                <div style=" height: 5px; background-color: black;margin: 6px 0;" ></div>
+                                                <div style=" height: 5px; background-color: black;margin: 6px 0;" ></div>
+                                        </div>
+                                <div class="col-md-8 col-sm-8 col-xs-7 ">
+                                        <h3 style="margin-top: 10px;"> FRWY-LS1046A</h3>
+                                </div>
+                                <div class="row">
+                                    <div class=" col-md-12 col-sm-12 col-xs-12 ">
+                                        <h3 style="margin-top:10px;margin-left:30px;">CPU Performance</h3>
+                                        </div>
+                                        <div class="  col-md-12 col-sm-12 col-xs-12 ">
+                                            <a href="javascript:void(0)" style="margin-left:30px;" class="btn btn-danger" onclick="window.open(window.location.origin + ':19999/');">Detailed CPU Anaylsis</a>
+                                        </div>
+                                </div>
+                                
+                        </div>
+                        <div class="row hidden-md hidden-sm hidden-xs" id="mid-text" style="padding-bottom:30px;">
+                        <h3 style="margin-top: 10px;"> FRWY-LS1046A</h3>
+                        </div>
+                        
+                        <div class="row " id="create" >
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="middle">
+                                        <table class="text-center">
+                                            <thead class="text-center">
+                                                <tr>
+                                                    <td>
+                                                            <img class="logotwice" style="height:75%;padding-top: 30px;" src="assets/images/cpu_performance_2.png" alt="NXP" />
+                                                            <br><sub > CPU Performance</sub><br>
+                                                            <img class="logotwice" style="width: 75%" src="assets/images/cpu-performance_line.png" alt="NXP" />
+                                                    </td>
+                                                </tr>
+                                                
+                                            </thead>
+                                            <tbody class="text-center" style="font-size:14px;">
+                                                <tr style="font-size:18px;">
+                                                    <td>Frequency
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td ><label id="freq" >1600</label>
+                                                        
+                                                        <label>MHz</label>
+                                                    </td>
+                                                </tr>
+
+                                                <tr style="font-size:18px;">
+                                                        <td> DDR
+                                                        </td>
+                                                    </tr>
+                                                <tr>                                                
+                                                <tr>
+                                                    <td>4GB
+                                                    </td>
+                                                </tr>
+
+                                                <!-- <tr style="font-size:18px;">
+                                                        <td > Cores
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>4
+                                                    </td>
+                                                </tr> -->
+
+                                                <tr style="font-size:18px;">
+                                                    <td>Processor Family
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Arm Cortex A72
+                                                    </td>
+                                                </tr>
+                                                
+                                                
+                                                <!-- <tr>
+                                                    <td>
+                                                            <br>
+                                                            <sup>Enabled</sup> 
+                                                            <br> <sub> Virtulaization</sub>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                            <br>
+                                                            <sup>512KB</sup> 
+                                                            <br> <sub>Cache Memory</sub>
+                                                    </td>
+                                                </tr> -->
+                                            </tbody>
+                                        </table>
+                                </div>
+                        </div>
+                        
+                </div>
+                <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12 fix-right text-center"  id="right">
+                         <!--- +++++++++++++++++++++++++++++++++++++++++++++++   --> 
+                         <div class="row text-center hidden-md hidden-sm hidden-xs" id="cpu_header" style=" background-color: #354957;
+                         color: white;
+                         padding: 5px;
+                         padding-bottom: 30px;
+                         padding-top: 20px;">
+                                <div class=" col-sm-1 col-xs-1 col-lg-2 col-md-1  "> </div>
+                                <div class=" col-lg-8 col-md-11 col-sm-11 col-xs-11 ">
+                                        <div class=" col-lg-6 col-md-6 col-sm-10 col-xs-10 ">
+                                                            <h3 style="margin-top:10px;margin-left:30px;">CPU Performance</h3>
+                                                            </div>
+                                                            <div class=" col-lg-2 col-md-2 col-sm-10 col-xs-10 ">
+                                                                <a href="javascript:void(0)" style="margin-left:30px;" class="btn btn-danger" onclick="window.open(window.location.origin + ':19999/');">Detailed CPU Anaylsis</a>
+                                                            </div>
+                                            
+                                </div>
+                                <div class=" col-lg-2">                                             
+                                                                  </div>
+                            </div>
+                         <div class="row" style="background-color:#fff;margin-left: -13px; margin-top: 90px">
+                                <div class=" col-lg-3 col-md-3  col-sm-1 col-xs-1"> </div>
+                                <div class=" col-lg-6 col-md-6 col-sm-10 col-xs-10 " style="margin-top: 20px;">
+                                    <div class="panel panel-default">
+                                            <div class="panel-body">            
+                                                <div class=" text-center"> 
+                                                                    <div class=" col-lg-3 col-md-1 "></div>                  
+                                                                    <div  class=" col-lg-3 col-md-4 col-sm-6 col-xs-12 ">
+                                                                            <button class="btn btn-success " onclick='setvalue("1")' id="coremark" type="button">CoreMark</button>
+                                                                    </div>
+                                                                    <div class=" col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                                                                            <button class="btn " onclick='setvalue("2")' id="drystone" type="button">Dhrystone</button>                                    
+                                                                    </div>
+                                                                
+                                                                    <div class=" col-lg-3 col-md-1 "></div>  
+                                                </div>
+                                            </div>
+                                    </div>
+                                </div>
+                                <div class=" col-lg-3 col-md-3  "> </div>
+                            </div>
+     
+     <!--- +++++++++++++++++++++++++++++++++++++++++++++++   -->  
+                              <div class="row"  style="background-color:#fff;margin-left: -13px;">
+                                <div class=" col-lg-3 col-md-3 col-sm-1 col-xs-1"> </div>
+                                <div class=" col-lg-6 col-md-6 col-sm-10 col-xs-10 ">
+                                        <div class="row">
+                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+                                                    <label style="width:auto;">Number of Cores   </label>
+                                                    <select style="width:80px;" id="selcore" class="hidden" onchange="corevalue()">
+                                                        <option>1</option><option>2</option><option>3</option><option>4</option>
+                                                    </select>
+                                                </div>
+                                                </div>
+                                                <div class="row">
+                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+                                                        <div class="panel panel-default">
+                                                                <div class="panel-heading">Core Status</div>
+                                                                <div class="panel-body">
+                                                                        <button class="btn  core" id="core0" type="button">Core 0</button> 
+                                                                        <button class="btn  core" id="core1" type="button">Core 1</button> 
+                                                                        <button class="btn  core" id="core2" type="button">Core 2</button> 
+                                                                        <button class="btn  core" id="core3" type="button">Core 3</button> 
+                                                                </div>
+                                                        </div>
+                                                </div>
+                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center" id="go1">
+                                                        <button class="btn btn-primary" id="go" style="width:80px;" onclick='getvalue("2")'>GO</button>
+                                                </div>
+                                                </div>
+                                </div>
+                                <div class=" col-lg-3 col-md-3  "> </div>
+                            </div>
+                                        
+                                  <!--Gauge for Desktop-->      
+                            <div class="row"  style="background-color:#fff;margin-left: -13px;">                       
+                                <div class=" col-lg-1 col-md-1 col-sm-2 col-xs-2  "> </div>
+                                <div class=" col-lg-5 col-md-5 col-sm-9 col-xs-9 ">
+                                      <div class="power_gauge row text-center">
+                                          <div style="height:300px;" id="circularGaugeContainer1" data-bind="{ dxCircularGauge: circularGaugeConfiguration1 }">
+                                          </div>
+                                          <span class="fig_title2 h3"><strong>Performance</strong></span>
+                                      </div>
+                                      <div class="performance_value row text-center">
+                                            <label class="h3"> 
+                                                    <span class="" id="it_id">0</span>
+                                                     <span id="unit_id">Iterations/Sec</span>
+                                               </label>
+    
+                                      </div>
+                                  </div>
+                                  <div class=" col-lg-1 col-md-1 col-sm-2 col-xs-2  "> </div>
+                                  <div class=" col-lg-5 col-md-5 col-sm-9 col-xs-9 ">
+                                    <div class="power_gauge row text-center">
+                                        <div id="circularGaugeContainer" style="height:300px;"  data-bind="{ dxCircularGauge: circularGaugeConfiguration }">
+                                        </div>
+                                        <div class="fig_title1 h3"><strong>Power Value</strong></div>
+                                    </div>
+                                    <div class="power_value performance_value row text-center">
+                                            <label class="h3"> 
+                                                    <span class=" value_css power_watt" >0</span>
+                                                     <span id="">Watts</span>
+                                            </label>
+                                        <!--<h3><span class="unit"> MHZ</span></h3>-->
+                                    </div>
+    
+                                </div>
+                                
+                              </div>
+    
+     <!--- +++++++++++++++++++++++++++++++++++++++++++++++   --> 
+     <!-- <div class="row">
+            <div class=" col-lg-2 col-md-3 col-sm-12 col-xs-12 "> </div>
+            <div class=" col-lg-7 col-md-6 col-sm-12 col-xs-12 ">
+                
+                                    <div class="panel panel-default" style="margin: 20px;">
+                                            <div class="panel-heading h3 text-center">Frequency</div>
+                                            <div class="panel-body text-center">   
+                                                    <label id="freq" class="h3" style="width:auto;","font-size:30px;">
+                                                        0</label>
+                                                    
+                                                    <label class="h3" style="width:auto;","font-size:30px;">MHz</label>
+                                            </div>
+                                    
+                </div>
+            </div>
+            <div class=" col-lg-3 col-md-3 col-sm-12 col-xs-12 "> </div>
+        </div>                         -->
+                                <div class="row text-center" style="background-color:#fff;margin-left: -13px;">
+                                    <div class=" col-lg-1 col-md-1 col-sm-1 col-xs-1  "> </div>
+                                    <div class=" col-lg-5 col-md-5 col-sm-11 col-xs-11">
+                                      <div id="chart-container1" style="height:300px;"  class="text-center"></div>
+                                      <div class="temp_value"  style="margin-top:10px;">
+                                          <p class="temp_css h3"><strong>Temperature (T
+                                              <sub>j</sub>)</strong></p>
+                                      </div>
+                                  </div>
+    
+                                  <div class=" col-lg-1 col-md-1 col-sm-1 col-xs-1  "> </div>
+                                  <div class=" col-lg-5 col-md-5 col-sm-11 col-xs-11 ">
+                                      <div id="chart-container2" style="height:300px;"  class="text-center"></div>
+                                      <div class="cpu_value"style="margin-top: 12px;">
+                                          <p class="cpu_per_css h3"><strong>CPU Utilization</strong></p>
+                                      </div>
+                                  </div>
+                                </div>
+                </div>
+  </div>
+ 
+    <div id="pageLoadModal" class="modal fade session" role="dialog" data-backdrop="static" data-keyboard="false">
+        <div class="modal-lg padding-top-140">
+            <!-- Modal content-->
+            <div class="removeModal">
+                <div class="modal-body">
+                    
+               <p class="text-center loadertext" >Process already running...</p> 									
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="coremarkmodal" class="modal fade session" role="dialog" data-backdrop="static" data-keyboard="false">
+        <div class="modal-lg padding-top-140">
+            <!-- Modal content-->
+            <div class="removeModal">
+                <div class="modal-body">
+                    
+               <p class="text-center loadertext" >Please wait, CoreMark process is running..!</p> 									
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="dhrystonemodal" class="modal fade session" role="dialog" data-backdrop="static" data-keyboard="false">
+        <div class="modal-lg padding-top-140">
+            <!-- Modal content-->
+            <div class="removeModal">
+                <div class="modal-body">
+                    
+               <p class="text-center loadertext" >Please wait, Dhrystone process is running..!</p> 									
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="nav-tab" class="modal fade session "  role="dialog" data-backdrop="static" data-keyboard="false">
+            <div class="modal-lg padding-top-140" style="margin-top:-260px;">
+                <!-- Modal content-->
+                <div class="removeModal">
+                    <div class="modal-body">
+                        <div style="height: -webkit-fill-available;
+                        overflow: scroll; display: block">
+                            <aside class="sidebar-left">
+                                    <ul class="sidenav text-center" >
+                                      <li style="    border-right-color: black;
+                                      border-right-style: solid;background-color: #354957;"><a href="../index.html">
+                                          <img class="logotwice" src="assets/images/logo.png" alt="NXP" />
+                                        <br><sub>version  2.0.0</sub></a>
+                                       </li>
+                                        <li style="margin-top:10px;"><a class="font17 active" href="cpu.html">
+                                                <img class="logotwice active" src="assets/images/CPU-Performance.png" alt="NXP" />
+                                                <br><sub class="active text-center"> CPU Performance</sub>
+                                            </a></li>
+                                        <li><a class="font17" href="../refrigerator/fridge.html">
+                                            <img class="logotwice" src="assets/images/Data-Analytics.png" alt="NXP" />
+                                            <br><sub>Data Analytics </sub>
+                                        </a></li>
+                                        <!-- <li><a class="font17 " href="../sensor/sensor.html">
+                                            <img class="logotwice" src="assets/images/Data Analytics Generation 2.png" alt="NXP" />
+                                            <br><sub>Sensor Data Analytics</sub>
+                                        </a></li> -->
+                                        <li><a class="font17" href="../ml/ml.html">
+                                                <img class="logotwice" src="assets/images/Machine-Learning-Video-Analytics.png" alt="NXP" />
+                                                <br><sub>Machine Learning/Video Analytics</sub>
+                                            </a></li>
+                                            <li><a class="font17 " href="../videovault/videovault.html">
+                                                <img class="logotwice" src="assets/images/Video-Vault.png" alt="NXP" />
+                                                <br><sub>Video Vault</sub>
+                                            </a></li>
+                                            
+                                            <li style="margin:10px;"><button class="font17 btn btn-warning" onclick=" $('body').removeClass('modal-open');$('#nav-tab').hide();">EXIT</button>
+                                            </li>
+                                      </ul>
+                            </aside>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!--Core Javascript Files-->
+    <script src="js/jquery.min.js" type="text/javascript"></script>
+
+    <script type="text/javascript" src="js/customjs.js"></script>
+
+    <script type="text/javascript" src="assets/js/jquery.js"></script>
+
+    <script src="assets/js/highcharts/highcharts.js"></script>
+    <script src="assets/js/highcharts/highcharts-more.js"></script>
+    <script src="assets/js/highcharts/solid-gauge.js"></script>
+    
+    <script>
+       
+
+        
+    </script>
+</body>
+
+</html>

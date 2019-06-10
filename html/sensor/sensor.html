@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<!-- /* Copyright 2019 NXP
+
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions
+are met:
+1. Redistributions of source code must retain the above copyright
+   notice, this list of conditions and the following disclaimer.
+2. Redistributions in binary form must reproduce the above copyright
+   notice, this list of conditions and the following disclaimer in the
+   documentation and/or other materials provided with the distribution.
+3. Neither the name of the copyright holders nor the names of its
+   contributors may be used to endorse or promote products derived from
+   this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS  AND CONTRIBUTORS
+``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+A PARTICULAR PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR
+CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. */ -->
+
+<html lang="en">
+
+<head>
+    <link rel="icon" type="image/x-icon" href="assets/images/logo.png">
+    <title>NXP || Data Analytics</title>    
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=7">
+<!--Core CSS Files-->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap-theme.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/Power-gui.css" />
+    <style>
+        @media (max-width: 1024px) {
+                .mar-15
+                {
+                    margin-right: -20px;
+                }
+                #body_fridge{
+                    margin-top:10px!important;
+                }
+            }
+        body.modal-open{
+            overflow: hidden;
+        }
+        .door-state ul li{
+            width: 31%;
+            margin: 1%;
+            float: left;
+            text-align: center;
+            padding: 10px;
+            list-style: none;
+        }
+        .door-state ul li .fridge-icon{
+            width: 100%;
+            height: 110px;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: 100%;
+            position: relative;
+        }
+        .door-state ul li .close{
+            background-image: url(assets/img/fridge-close.png);
+        }
+        .door-state ul li .open{
+            background-image: url(assets/img/fridge-open.png);
+        }
+        .door-state .fridge-icon .badge{
+            position: absolute;
+            right: -6px;
+            top: 1px;
+            width: 23px;
+            height: 18px;
+            background: #d54d1b;
+            color: #fff;
+            display: block;
+            font-size: 11px;
+            border-radius: 20px;
+            text-align: center;
+            line-height: 19px;
+        }
+    </style>    
+</head>
+
+<body style="overflow-x:hidden;background-color: white">
+
+  <div class="out-container row mar-15" id="header" >
+            <div class="col-lg-2  text-center hidden-md hidden-xs hidden-sm" id="left">  
+                <aside class="sidebar-left">
+                    <ul class="sidenav text-center" >
+                      <li style="    border-right-color: black;
+                      border-right-style: solid;background-color: #354957;padding-bottom:7px;"><a href="../index.html">
+                          <img class="logotwice" src="assets/images/logo.png" alt="NXP" />
+                        <br><sub>version  2.0.0</sub></a>
+                       </li>
+                        <li style="margin-top:10px;"><a class="font17 " href="../CPU/cpu.html">
+                                <img class="logotwice " src="assets/images/CPU-Performance.png" alt="NXP" />
+                                <br><sub > CPU Performance</sub>
+                            </a></li>
+                        <!-- <li><a class="font17 " href="../refrigerator/fridge.html">
+                            <img class="logotwice " src="assets/images/Data-Analytics.png" alt="NXP" />
+                            <br><sub >Cold Storage Data Analytics</sub>
+                        </a></li> -->
+                        <li><a class="font17 active " href="../refrigerator/fridge.html">
+                                <img class="logotwice active" src="assets/images/Data-Analytics.png" alt="NXP" />
+                                <br><sub class="active text-center">Data Analytics</sub>
+                            </a></li>
+                        <li><a class="font17 " href="../ml/ml.html">
+                                <img class="logotwice " src="assets/images/Machine-Learning-Video-Analytics.png" alt="NXP" />
+                                <br><sub >Machine Learning/Video Analytics</sub>
+                            </a></li>
+                        <li><a class="font17 " href="../videovault/videovault.html">
+                                <img class="logotwice" src="assets/images/Video-Vault.png"  alt="NXP" />
+                                <br><sub>Video Vault</sub>
+                            </a></li>
+                      </ul>
+            </aside>
+            </div>
+
+            <div class="col-lg-10 col-md-12 col-sm-12 col-xs-12" id="ml" >
+                <div class="row mar-15" id="header_fridge"  >
+                        <div onclick="$('body').addClass('modal-open');$('#nav-tab').show();" class="hidden-lg col-md-1 col-sm-1 col-xs-2 ">
+                                <div style=" height: 5px; background-color: black;margin: 6px 0;" ></div>
+                                <div style=" height: 5px; background-color: black;margin: 6px 0;" ></div>
+                                <div style=" height: 5px; background-color: black;margin: 6px 0;" ></div>
+                        </div>
+                        <div class="hidden-lg col-md-3 col-sm-3 col-xs-8 text-center "  >
+                                <h3>FRWY-LS1046A</h3>
+                            </div>
+                        <div class="col-lg-2 hidden-md hidden-sm hidden-xs text-left "  >
+                            <h3>FRWY-LS1046A</h3>
+                        </div>
+                        <div class="col-lg-10 hidden-md hidden-sm hidden-xs  text-center" >
+                                <div class="col-lg-7   text-center" >
+                                        <h3>Data Analytics</h3>
+                                </div>
+                                <div class=" col-lg-2 ">
+                                        <a href="javascript:void(0)" class="btn btn-danger" onclick="window.open(window.location.origin + ':19999/');">Detailed CPU Anaylsis</a>
+                                </div>
+                        </div>
+                        <div class="hidden-lg col-md-6 col-sm-4 col-xs-12  text-center" >
+                                <h3>Data Analytics</h3>
+                        </div>
+                        <div class="hidden-lg col-md-2 col-sm-4 col-xs-12 text-center">
+                                <a href="javascript:void(0)" class="btn btn-danger" onclick="window.open(window.location.origin + ':19999/');">Detailed CPU Anaylsis</a>
+                        </div>
+                        
+                </div>
+                <div class="row" id="body_fridge">
+                        <div class="row">
+                                <div class=" col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center " style="margin-bottom: 10px;">                                                               
+                                        <ul class="nav nav-tabs">
+                                        <li ><a href="../refrigerator/fridge.html"  style="font-weight: bold;font-size: 12px;">Cold Storage Data Analytics</a></li>
+                                        <li class="active"><a href="sensor.html" style="font-weight: bold;font-size: 12px;">Sensor Data Analytics</a></li>
+                                        </ul>
+                                </div>
+                        </div>
+                        
+                        <div class="row " style="    margin-left: 1px;
+                        border: none;
+                        border-radius: 5px;    margin-right: 15px;
+
+                    ">
+                                <div class="">                                
+                                </div>
+                                <div class="col-lg-1 col-md-2 col-sm-2 col-xs-2 text-center">
+                                        <button class="btn btn-success" id="start" onclick="start_sensor();">Start</button>
+                                </div>
+                                <div class="col-lg-1 col-md-2 col-sm-2 col-xs-2 text-center">
+                                        <button class="btn btn-danger"id="stop" onclick="stop_sensor();">Stop</button>
+                                </div>
+                                <div class="col-lg-6 col-md-4 col-sm-4 col-xs-2">                                
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-center">
+                                        <button class="btn btn-primary sensor_start" onclick="$('#all_details').show();computetableValues();">All Sensor Details</button>
+                                    </div>
+                        </div>
+<!------------------------------------------>
+                        <div class="row" style="margin-top: 20px">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center "  >
+                                    <div class="chart-title text-center">
+                                            <span class="titlestyle" style="margin-right:40px;"><b> Sensor Device Configuration</b></span>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="row chart-sec" >
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12  text-center ">
+                                <label style="width:auto;">No of Cores</label>
+                                <select style="width:80px;" id="" class="sensor_start" onchange="corechange(event);">
+                                        <option value="4">4</option>
+                                        <option value="2">2</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12  text-center ">
+                                <label style="width:auto;">No of Sensors</label>
+                                <select style="width:80px;" id="sensorlist" class="sensor_start" onchange="sensorchange();">
+                                        <option value="10">10</option>
+                                        <option value="20">20</option>
+                                        <option value="30">30</option>
+                                        <option value="40">40</option>
+                                </select>
+                            </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12  text-center ">
+                                    <label style="width:auto;">Sensor Number </label>
+                                    <select style="width:80px;" id="selcore" class="sensor_start" >
+                                        <option value="1">1</option><option value="2">2</option>
+                                        <option value="3">3</option><option value="4">4</option>
+                                        <option value="5">5</option><option value="6">6</option>
+                                        <option value="7">7</option><option value="8">8</option>
+                                        <option value="9">9</option><option value="10">10</option>
+                                    </select>
+                                </div>
+                        </div>
+<!------------------------------------------>
+                        <div class="row" style="margin-right:-15px;" >
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-center "  >
+                                <div class="row" style="margin-top: 20px">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center "  >
+                                        <div class="chart-title text-center">
+                                                <span class="titlestyle" style="margin-right:40px;"><b> CPU Utilization</b></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            
+                                <div class="row chart-sec" >
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  text-center ">
+                                        <div id="cpu_detail" style="height: 200px;"></div>
+                                                            
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-center "  >
+                                    <div class="row" style="margin-top: 20px">
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center "  >
+                                                    <div class="chart-title text-center">
+                                                            <span class="titlestyle" style="margin-right:40px;"><b> Sensor State (out of position more than 2 seconds)</b></span>
+                                                    </div>
+                                            </div>
+                                        </div>
+                                        <div class="row chart-sec" style="overflow: auto;
+                                        height: 260px;">
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  text-center ">
+                                                <div id="" class="door-state" style="height: 200px;" style="overflow:auto">
+                                                        <ul class="w100" id="fridge-state">
+                    
+                                                        </ul>
+                                                </div>
+                                                                      
+                                            </div>
+                                        </div>
+                        </div>
+                        </div>
+<!------------------------------------------>
+                        <div class="row" style="margin-top: 20px">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center "  >
+                                        <div class="chart-title text-center">
+                                                <span class="titlestyle" style="margin-right:40px;"><b> Accelerometer</b></span>
+                                        </div>
+                                </div>
+                        </div>
+                        <div class="row chart-sec">
+                                    
+                                                        <div class=" col-lg-4 col-md-4 col-sm-12 col-xs-12 ">
+                                                                <div id="accelerometerX" style="height: 200px;"></div>
+                                                        </div>
+                                                        <div class=" col-lg-4 col-md-4 col-sm-12 col-xs-12 ">
+                                                                <div id="accelerometerY" style="height: 200px;"></div>
+                                                        </div>
+                                                        <div class=" col-lg-4 col-md-4 col-sm-12 col-xs-12 ">
+                                                                <div id="accelerometerZ" style="height: 200px;"></div>
+                                                        </div>
+                            
+                        </div>
+                        <div class="row " style="margin-top:20px;">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center" >
+                                            <div class="chart-wrap box-shadow" style="border-width: 1px;
+                                            border-color: #595959;
+                                            border-style: solid;">
+                                                <div class="chart-title text-center">
+                                                    <span class="titlestyle"><b>Accelerometer Graph</b></span>
+                                                </div>
+                                                <div class="chart-body" style="    margin-top: 20px;">
+                                                    <div class="chart-area">
+                                                                <div id="graphA" style="height: 400px;background-color:white;font-size:50px;">
+                                                                </div>
+                                                    </div>
+                                                </div>
+                                                <div class="chart-footer">
+                
+                                                </div>
+                                            </div>
+                                </div>
+                        </div>
+                </div>
+            
+            <div id="nav-tab" class="modal fade session "  role="dialog" data-backdrop="static" data-keyboard="false">
+                    <div class="modal-lg padding-top-140" style="margin-top:-150px;">
+                            <!-- Modal content-->
+                            <div class="removeModal">
+                                <div class="modal-body">
+                                    <div style="height: -webkit-fill-available;
+                                    overflow: scroll; display: block">
+                                <aside class="sidebar-left">
+                                    <ul class="sidenav text-center" >
+                                      <li style="    border-right-color: black;
+                                      border-right-style: solid;background-color: #354957;padding-bottom:7px;"><a href="../index.html">
+                                          <img class="logotwice" src="assets/images/logo.png" alt="NXP" />
+                                        <br><sub>version  2.0.0</sub></a>
+                                       </li>
+                                        <li style="margin-top:10px;"><a class="font17 " href="../CPU/cpu.html">
+                                                <img class="logotwice " src="assets/images/CPU-Performance.png" alt="NXP" />
+                                                <br><sub > CPU Performance</sub>
+                                            </a></li>
+                                        <!-- <li><a class="font17 " href="../refrigerator/fridge.html">
+                                                <img class="logotwice " src="assets/images/Data-Analytics.png" alt="NXP" />
+                                                <br><sub >Cold Storage Data Analytics</sub>
+                                            </a></li> -->
+                                            <li><a class="font17 active " href="../refrigerator/fridge.html">
+                                                <img class="logotwice active" src="assets/images/Data-Analytics.png" alt="NXP" />
+                                                <br><sub class="active text-center">Data Analytics</sub>
+                                            </a></li>
+                                        <li><a class="font17 " href="../ml/ml.html">
+                                                <img class="logotwice " src="assets/images/Machine-Learning-Video-Analytics.png" alt="NXP" />
+                                                <br><sub >Machine Learning/Video Analytics</sub>
+                                            </a></li>
+                                        <li><a class="font17 " href="../videovault/videovault.html">
+                                                <img class="logotwice" src="assets/images/Video-Vault.png"  alt="NXP" />
+                                                <br><sub>Video Vault</sub>
+                                            </a></li>
+                                                <li style="margin:10px;"><button class="font17 btn btn-warning" onclick="$('body').removeClass('modal-open');$('#nav-tab').hide();">EXIT</button>
+                                    
+                                      </ul>
+                            </aside>	
+                            </div>						
+                            </div>
+                        </div>
+                    </div>
+            </div>
+
+            <div id="all_details" class="modal fade session "  role="dialog" data-backdrop="static" data-keyboard="false">
+                    <div class="modal-lg padding-top-140" style="margin-top:-100px;">
+                        <!-- Modal content-->
+                        <div class="removeModal">
+                            <div class="modal-header text-right" >
+                                <button class="btn btn-success" onclick="hide_table();">EXIT</button>
+                            </div>
+                            <div class="modal-body">
+                                    <div style="height: 350px;overflow: auto;">
+                                            <table class="table  table-responsive table-striped table-hover text-center" id="sensortab" style="background-color:white;">
+                                                   <thead class="tableHead">
+                                                               <tr class="info">
+                                                                   <th class="wid_19">Sensor Name</th>
+                                                                   <th class="wid_19" colspan="3">Accelerometer Values</th>
+                                                           </tr>
+                                                           <tr class="info">
+                                                                <th class="wid_19" colspan="1"></th>
+                                                                  <th class="wid_19">x-axis</th>
+                                                                   <th class="wid_19">y-axis</th>
+                                                                   <th class="wid_19">z-axis</th>
+                                                           </tr>
+                                                           </thead>
+                                                    <tbody id="tablesoc">
+                                                    
+                                                    </tbody>
+                                               </Table>
+                                          </div>							
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            <div id="device_moved" class="modal fade session "  role="dialog" data-backdrop="static" data-keyboard="false">
+                <div class="modal-lg padding-top-140" style="margin-top:-100px;">
+                    <!-- Modal content-->
+                    <div class="removeModal">
+                        <!-- <div class="modal-header text-right" >
+                            <button class="btn btn-success" onclick="hide_table();">EXIT</button>
+                        </div> -->
+                        <div class="modal-body text-center">
+                            <img class="logotwice" src="assets/images/AD.png"  alt="NXP" />
+                            <br>
+                            <button class="btn btn-danger" style="font-size:20px;" id="device_mess"></button>
+                                               						
+                        </div>
+                    </div>
+                </div>
+        </div>
+  </div>
+
+    <!--Core Javascript Files-->
+    <script type="text/javascript" src="assets/js/jquery.js"></script>
+    <script type="text/javascript" src="sensor.js"></script>
+
+    <script src="assets/highcharts/highcharts.js"></script>
+    <script src="assets/highcharts/highcharts-more.js"></script>
+    
+    <script src="assets/highcharts/solid-gauge.js"></script> 
+    <script>
+
+        $(document).ready(function () {
+            $("#device_moved").hide();           
+
+            $.ajax({
+                    url: "http://" + window.location.host + "/network.php?val=9",
+                    cache: false,
+                    success: function(data){
+
+                    },
+                    error:function(data){
+                       // console.log("error"+data);
+                    }
+                });
+                $("#stop").prop("disabled",true);
+                $(".sensor_start").prop("disabled",true);
+                $("#graphA").text("No Data Available");
+                //drawGraph();
+                drawAccelerometerX(0);
+                drawAccelerometerY(0);
+                drawAccelerometerZ(0);
+
+                drawCPU();
+                getCPU();
+
+                setInterval(() => {
+                    getCPU();
+                }, 1000);
+                
+                
+        });
+       
+    </script>
+</body>
+
+</html>

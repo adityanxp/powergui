@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<!-- /* Copyright 2019 NXP
+
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions
+are met:
+1. Redistributions of source code must retain the above copyright
+   notice, this list of conditions and the following disclaimer.
+2. Redistributions in binary form must reproduce the above copyright
+   notice, this list of conditions and the following disclaimer in the
+   documentation and/or other materials provided with the distribution.
+3. Neither the name of the copyright holders nor the names of its
+   contributors may be used to endorse or promote products derived from
+   this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS  AND CONTRIBUTORS
+``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+A PARTICULAR PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR
+CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. */ -->
+
+<html lang="en">
+
+<head>
+    <link rel="icon" type="image/x-icon" href="assets/images/logo.png">
+    <title>NXP || Video Vault</title>    
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=7">
+    <!--Core CSS Files-->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap-theme.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/Power-gui.css" />
+    <link rel="stylesheet" type="text/css" href="css/Power-gui-com.css" />
+    <style>
+           @media (max-width: 1024px) {
+                        .row
+                        {
+                            margin-right: -15px;
+                        }
+                    }
+                body.modal-open{
+                        overflow: hidden;
+                    }
+    </style>
+</head>
+
+<body style="overflow-x:hidden;background-color: white">
+
+  <div class="out-container row " id="header">
+            <div class="col-lg-2 hidden-md hidden-sm hidden-xs text-center" id="left">  
+                <aside class="sidebar-left">
+                        <ul class="sidenav text-center" >
+                          <li style="    border-right-color: black;
+                          border-right-style: solid;background-color: #354957;padding-bottom:7px;"><a href="../index.html">
+                              <img class="logotwice" src="assets/images/logo.png" alt="NXP" />
+                            <br><sub>version  2.0.0</sub></a>
+                           </li>
+                            <li style="margin-top:10px;"><a class="font17 " href="../CPU/cpu.html">
+                                    <img class="logotwice " src="assets/images/CPU-Performance.png" alt="NXP" />
+                                    <br><sub > CPU Performance</sub>
+                                </a></li>
+                            <li><a class="font17 " href="../refrigerator/fridge.html">
+                                <img class="logotwice " src="assets/images/Data-Analytics.png" alt="NXP" />
+                                <br><sub >Data Analytics </sub>
+                            </a></li>
+                            <!-- <li><a class="font17 " href="../sensor/sensor.html">
+                                    <img class="logotwice" src="assets/images/Data Analytics Generation 2.png" alt="NXP" />
+                                    <br><sub>Sensor Data Analytics</sub>
+                                </a></li> -->
+                            <li><a class="font17 " href="../ml/ml.html">
+                                    <img class="logotwice " src="assets/images/Machine-Learning-Video-Analytics.png" alt="NXP" />
+                                    <br><sub >Machine Learning/Video Analytics</sub>
+                                </a></li>
+                            <li><a class="font17 active" href="videovault.html">
+                                    <img class="logotwice active" src="assets/images/Video-Vault.png"  alt="NXP" />
+                                    <br><sub class="active text-center">Video Vault</sub>
+                                </a></li>
+                          </ul>
+                </aside>
+            </div>
+
+            <div class="col-lg-10 col-md-12 col-sm-12 col-xs-12" id="ml" >
+                <div class="row" id="header_fridge">
+                        <div onclick="$('body').addClass('modal-open');$('#nav-tab').show();" class="hidden-lg col-md-1 col-sm-1 col-xs-2 ">
+                                <div style=" height: 5px; background-color: black;margin: 6px 0;" ></div>
+                                <div style=" height: 5px; background-color: black;margin: 6px 0;" ></div>
+                                <div style=" height: 5px; background-color: black;margin: 6px 0;" ></div>
+                        </div>
+                        <div class="hidden-lg col-md-3 col-sm-3 col-xs-8 text-center "  >
+                            <h3>FRWY-LS1046A</h3>
+                        </div>
+                        <div class="col-lg-2 hidden-md hidden-sm hidden-xs text-left "  >
+                            <h3>FRWY-LS1046A</h3>
+                        </div>
+                            <div class="col-lg-10 hidden-md hidden-sm hidden-xs  text-center" >
+                                    <div class="col-lg-7   text-center" >
+                                            <h3>Video Vault</h3>
+                                    </div>
+                                    <div class=" col-lg-2 ">
+                                            <a href="javascript:void(0)" class="btn btn-danger" onclick="window.open(window.location.origin + ':19999/');">Detailed CPU Anaylsis</a>
+                                    </div>
+                            </div>
+                            <div class="hidden-lg col-md-6 col-sm-4 col-xs-12  text-center" >
+                                    <h3>Video Vault</h3>
+                            </div>
+                            <div class="hidden-lg col-md-2 col-sm-4 col-xs-12 text-center">
+                                    <a href="javascript:void(0)" class="btn btn-danger" onclick="window.open(window.location.origin + ':19999/');">Detailed CPU Anaylsis</a>
+                            </div>
+                </div>
+                <div class="row" id="body_fridge">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center "  >
+                            <div class="row" >
+                                    <div class=" col-lg-4 col-md-4 col-sm-12 col-xs-12 ">
+                                            <img data-toggle="modal" onclick="enable('movie1','1');" data-target="#myModal1" data-backdrop="static" src="assets/images/Platform-for-Edge-Computing.png" alt="Edge Computing" class="img-responsive videoImage"
+                                            style="cursor:pointer;">
+                                    </div>
+                                    <div class=" col-lg-4 col-md-4 col-sm-12 col-xs-12 ">
+                                        <img data-toggle="modal" onclick="enable('movie6','6');" data-target="#myModal6" data-backdrop="static" src="assets/images/Getting-started-video.png" alt="Introduction" class="img-responsive videoImage"
+                                        style="cursor:pointer">    
+                                    </div>
+                                    <div class=" col-lg-4 col-md-4 col-sm-12 col-xs-12 ">
+                                            <img data-toggle="modal" onclick="enable('movie2','2');" data-target="#myModal2" data-backdrop="static" src="assets/images/cpu--performance.png" alt="CPU-Performance" class="img-responsive videoImage"
+                                            style="cursor:pointer">    
+                                    </div>
+                                    
+                            </div>
+                            <div class="row" >
+                                    <div class=" col-lg-4 col-md-4 col-sm-12 col-xs-12 ">
+                                        <img data-toggle="modal" onclick="enable('movie3','3');" data-target="#myModal3" data-backdrop="static" src="assets/images/cold-storage-data-analytics.png" alt="cold-storage-data-analytics" class="img-responsive videoImage"
+                                        style="cursor:pointer;">
+                                    </div>
+                                    <div class=" col-lg-4 col-md-4 col-sm-12 col-xs-12 ">
+                                        <img data-toggle="modal" onclick="enable('movie4','4');" data-target="#myModal4" data-backdrop="static" src="assets/images/accelerometer-sensor.png" alt="accelerometer-sensor" class="img-responsive videoImage"
+                                        style="cursor:pointer">
+                                    </div>
+                                    <div class=" col-lg-4 col-md-4 col-sm-12 col-xs-12 ">
+                                            <img data-toggle="modal" onclick="enable('movie5','5');" data-target="#myModal5" data-backdrop="static" src="assets/images/Object-Detection-And-Facial-Recognition.png" alt="Object-Detection-And-Facial-Recognition" class="img-responsive videoImage"
+                                            style="cursor:pointer;">
+                                    </div>
+                            </div>
+                                
+                                
+                                
+                        </div>
+                </div>
+                
+
+            </div>
+
+            <div id="myModal1" class="modal fade" role="dialog"  style="padding-top: 100px;">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="row">
+                            <div class="col-lg-11"></div>
+                            <div class="col-lg-1">
+                                    <button  type="button" onclick="disable('movie1','1');" class="close-popup" data-dismiss="modal"  >
+                                            <img src="assets/images/img5.png" width="25" style="float: right;"></button>  
+                            </div>                    
+                        </div>                      
+                        <div class="modal-body">
+                            <video style="width: 100%" id="movie1" controls autoplay="false" class="myVideo">
+                                <source src="assets/video/edge-computing.mp4" autostart="false" type="video/mp4"> Your browser does not support HTML5 video.
+                            </video>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div id="myModal2" class="modal fade" role="dialog" style="padding-top: 100px;">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="row">
+                            <div class="col-lg-11"></div>
+                            <div class="col-lg-1">
+                                    <button  type="button" onclick="disable('movie2','2');" class="close-popup" data-dismiss="modal"  >
+                                            <img src="assets/images/img5.png" width="25" style="float: right;"></button>  
+                            </div>                    
+                        </div> 
+                        <div class="modal-body">
+                            <video style="width: 100%" id="movie2" controls autoplay="false" class="myVideo">
+                                <source src="assets/video/cpu-performance.mp4" autostart="false" type="video/mp4"> Your browser does not support HTML5 video.
+                            </video>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="myModal3" class="modal fade" role="dialog" style="padding-top: 100px;">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="row">
+                            <div class="col-lg-11"></div>
+                            <div class="col-lg-1">
+                                    <button  type="button" onclick="disable('movie3','3');" class="close-popup" data-dismiss="modal"  >
+                                            <img src="assets/images/img5.png" width="25" style="float: right;"></button>  
+                            </div>                    
+                        </div> 
+                        <div class="modal-body">
+                            <video style="width: 100%" id="movie3" controls autoplay="false" class="myVideo">
+                                <source src="assets/video/cold-storage.mp4" autostart="false" type="video/mp4"> Your browser does not support HTML5 video.
+                            </video>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="myModal4" class="modal fade" role="dialog" style="padding-top: 100px;">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="row">
+                            <div class="col-lg-11"></div>
+                            <div class="col-lg-1">
+                                    <button  type="button" onclick="disable('movie4','4');" class="close-popup" data-dismiss="modal"  >
+                                            <img src="assets/images/img5.png" width="25" style="float: right;"></button>  
+                            </div>                    
+                        </div> 
+                        <div class="modal-body">
+                            <video style="width: 100%" id="movie4" controls autoplay="false" class="myVideo">
+                                <source src="assets/video/accelerometer-sensor.mp4" autostart="false" type="video/mp4"> Your browser does not support HTML5 video.
+                            </video>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="myModal5" class="modal fade" role="dialog" style="padding-top: 100px;">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="row">
+                            <div class="col-lg-11"></div>
+                            <div class="col-lg-1">
+                                    <button  type="button" onclick="disable('movie5','5');" class="close-popup" data-dismiss="modal"  >
+                                            <img src="assets/images/img5.png" width="25" style="float: right;"></button>  
+                            </div>                    
+                        </div> 
+                        <div class="modal-body">
+                            <video style="width: 100%" id="movie5" controls autoplay="false" class="myVideo">
+                                <source src="assets/video/Facial-and-Object-Recognition.mp4" autostart="false" type="video/mp4"> Your browser does not support HTML5 video.
+                            </video>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="myModal6" class="modal fade" role="dialog" style="padding-top: 100px;">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="row">
+                            <div class="col-lg-11"></div>
+                            <div class="col-lg-1">
+                                    <button  type="button" onclick="disable('movie6','6');" class="close-popup" data-dismiss="modal"  >
+                                            <img src="assets/images/img5.png" width="25" style="float: right;"></button>  
+                            </div>                    
+                        </div> 
+                        <div class="modal-body">
+                            <video style="width: 100%" id="movie6" controls autoplay="false" class="myVideo">
+                                <source src="assets/video/FRWY-LS1046A-Getting-Started.mp4" autostart="false" type="video/mp4"> Your browser does not support HTML5 video.
+                            </video>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                        
+
+  </div>
+  <div id="nav-tab" class="modal fade session "  role="dialog" data-backdrop="static" data-keyboard="false">
+        <div class="modal-lg padding-top-140" style="margin-top:-260px;">
+            <!-- Modal content-->
+            <div class="removeModal">
+                <div class="modal-body">
+                        <div style="height: -webkit-fill-available;
+                        overflow: scroll; display: block">
+                        <aside class="sidebar-left">
+                                <ul class="sidenav text-center" >
+                                  <li style="    border-right-color: black;
+                                  border-right-style: solid;background-color: #354957;padding-bottom:7px;"><a href="../index.html">
+                                      <img class="logotwice" src="assets/images/logo.png" alt="NXP" />
+                                    <br><sub>version  2.0.0</sub></a>
+                                   </li>
+                                    <li style="margin-top:10px;"><a class="font17 " href="../CPU/cpu.html">
+                                            <img class="logotwice " src="assets/images/CPU-Performance.png" alt="NXP" />
+                                            <br><sub > CPU Performance</sub>
+                                        </a></li>
+                                    <li><a class="font17 " href="../refrigerator/fridge.html">
+                                        <img class="logotwice " src="assets/images/Data-Analytics.png" alt="NXP" />
+                                        <br><sub >Data Analytics </sub>
+                                    </a></li>
+                                    <!-- <li><a class="font17 " href="../sensor/sensor.html">
+                                            <img class="logotwice" src="assets/images/Data Analytics Generation 2.png" alt="NXP" />
+                                            <br><sub>Sensor Data Analytics</sub>
+                                        </a></li> -->
+                                    <li><a class="font17 " href="../ml/ml.html">
+                                            <img class="logotwice " src="assets/images/Machine-Learning-Video-Analytics.png" alt="NXP" />
+                                            <br><sub >Machine Learning/Video Analytics</sub>
+                                        </a></li>
+                                    <li><a class="font17 active" href="videovault.html">
+                                            <img class="logotwice active" src="assets/images/Video-Vault.png"  alt="NXP" />
+                                            <br><sub class="active text-center">Video Vault</sub>
+                                        </a></li>
+                                            <li style="margin:10px;"><button class="font17 btn btn-warning" onclick="$('body').removeClass('modal-open');$('#nav-tab').hide();">EXIT</button>
+                                
+                                  </ul>
+                        </aside>	
+                        </div>							
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Core Javascript Files-->
+    <script type="text/javascript" src="assets/js/jquery.js"></script>
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                    url: "http://" + window.location.host + "/network.php?val=9",
+                    cache: false,
+                    success: function(data){
+
+                    },
+                    error:function(data){
+                       // console.log("error"+data);
+                    }
+                });
+            //$('#video-vault').show();
+            $('#movie1').get(0).pause();
+            $('#movie2').get(0).pause();
+            $('#movie3').get(0).pause();
+            $('#movie4').get(0).pause();
+            $('#movie5').get(0).pause();
+            $('#movie6').get(0).pause();
+
+        });
+        
+        function enable(id,mod_id)
+          {
+              $('#myModal'+mod_id).show();
+            $('#'+ id).get(0).play(); 
+          }
+          function disable(id,modal_id)
+          {
+            video = document.getElementById(id);
+            video.load();
+            video.pause();
+            $('#myModal'+ modal_id).hide();
+          }
+    </script>
+</body>
+
+</html>

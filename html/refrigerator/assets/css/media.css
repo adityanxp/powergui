@@ -1,0 +1,224 @@
+/* Copyright 2019 NXP
+
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions
+are met:
+1. Redistributions of source code must retain the above copyright
+   notice, this list of conditions and the following disclaimer.
+2. Redistributions in binary form must reproduce the above copyright
+   notice, this list of conditions and the following disclaimer in the
+   documentation and/or other materials provided with the distribution.
+3. Neither the name of the copyright holders nor the names of its
+   contributors may be used to endorse or promote products derived from
+   this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS  AND CONTRIBUTORS
+``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+A PARTICULAR PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR
+CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. */
+
+@media only screen and (max-width: 1599px){
+
+	.page-heading.listing ul li {
+		margin: 13px 0 0 85px;
+	}
+	.res-logo {
+		margin: 0 0 0 80px;
+	}
+}
+
+@media only screen and (max-width: 1241px){
+    /* Login Page */
+
+    /* Reports Page */
+    .side-nav nav{
+        width: 240px;
+    }
+    .main-wrapper{
+        /* width: calc(100% - 240px); */
+    }
+    .top-filter > ul > li{
+        width: 46%;
+        margin: 0px 2%;
+        min-height: 200px;
+    }
+    .top-filter > ul > li:last-child{
+        margin: 0px 2%;
+    }
+    .top-filter .get-fridge-info li{
+        width: 100%;
+        padding: 15px 40px;
+    }
+    .top-filter > ul select, .top-filter .get-fridge-info li select{
+        padding: 5px;
+    }
+	.main-block.w100.p2-center .videoEl {
+		width: 700px;
+	}
+	.modal-dialog.modal-width {
+		max-width: 60%;
+	}
+
+}
+
+@media only screen and (max-width: 1023px){
+    /* Login Page */
+
+    /* Reports Page */
+    .side-nav{
+        width: auto;
+    }
+    .side-nav nav{
+        left: -246px;
+        z-index: 99;
+        transition-timing-function: ease;
+        transition-duration: .15s;
+        transition-property: all;
+    }
+    .side-nav nav.active{
+        left: 0;
+        z-index: 99;
+    }
+    .main-wrapper {
+        width: auto;
+    }
+    .hamburger{
+        display: inline-block;
+    }
+		.hamburger.hamburger--slider.is-active {
+    left: 159px;
+    top: 0px;
+}
+    .page-heading .start{
+        left: 75px;
+    }
+    .page-heading .stop{
+        left: 175px;
+    }
+	p.ls {
+		font-size: 22px;
+		color: #fff;
+		border: 0;
+		margin: 20px 0 20px 0;
+	}
+	.hamburger-box {
+		margin-top: 10px;
+	}
+	.modal-dialog.modal-width {
+		max-width: 60%;
+
+	}
+
+
+}
+@media only screen and (max-width: 767px){
+    /* Login */
+
+	.page-heading.listing ul li {
+
+	}
+	.main-block.w100.p2-center .videoEl {
+		width: 100%;
+	}
+
+    #login{
+        position: static;
+    }
+    .login-wrapper{
+        position: static;
+        transform: none;
+        width: 100%;
+        height: auto;
+        border-radius: 0;
+    }
+    .login-wrapper .login-shadow, .login-wrapper .login-shadow .login-block{
+        border-radius: 0;
+    }
+    .login-wrapper .login-form{
+        width: 100%;
+    }
+    footer {
+        position: static;
+        margin: 10px 0;
+        width: 100%;
+    }
+
+    .main-wrapper{
+        float: none;
+    }
+    .main-wrapper .page-heading h3{
+        display: block;
+        margin-top: 56px;
+        text-align: left;
+        margin-left: 20px;
+    }
+    .page-heading .start, .page-heading .stop{
+        top: 87px;
+				z-index: 10;
+    }
+    .main-wrapper .page-heading .heading-side{
+        display: none;
+    }
+    .mobile-dropdown{
+        display: block;
+    }
+    .top-filter{
+        padding: 15px;
+    }
+    .top-filter > ul > li{
+        width: 100%;
+        margin: 0;
+    }
+    .top-filter > ul > li:last-child {
+        margin: 0;
+    }
+    .working-area .history-info{
+        width: 100%;
+    }
+    .working-area .real-time-info{
+        width: 100%;
+        margin-left: 0;
+    }
+    .fridge-status .block-quad{
+        width: 100%;
+        margin: 0;
+        margin-bottom: 20px;
+    }
+    #alert-history-in{
+        height: 300px;
+        overflow-y: auto;
+    }
+    .alert-history ul{
+        display: block;
+    }
+    .alert-history-body{
+        margin-bottom: 20px;
+    }
+    .alert-history ul li{
+        width: 100%;
+        flex: none;
+        margin-bottom: 10px;
+    }
+    .alert-history ul li:last-child{
+        font-weight: 400;
+    }
+
+}
+@media only screen and (max-width: 499px){
+
+p.ls {
+    font-size: 16px;
+    color: #fff;
+    border: 0;
+    margin: 22px 0 25px 0;
+}
+}

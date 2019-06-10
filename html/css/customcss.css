@@ -1,0 +1,698 @@
+/* Copyright 2019 NXP
+
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions
+are met:
+1. Redistributions of source code must retain the above copyright
+   notice, this list of conditions and the following disclaimer.
+2. Redistributions in binary form must reproduce the above copyright
+   notice, this list of conditions and the following disclaimer in the
+   documentation and/or other materials provided with the distribution.
+3. Neither the name of the copyright holders nor the names of its
+   contributors may be used to endorse or promote products derived from
+   this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS  AND CONTRIBUTORS
+``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+A PARTICULAR PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR
+CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. */
+
+
+
+
+#page_loader, #page_loader_nat{
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    z-index:9999;
+    text-align:center;
+    background:#fff url(../images/loader-64x/Preloader_1.gif) center center no-repeat;
+}
+
+#page_loader .tdiv, #page_loader_nat .tdiv{
+    display:table;
+    height:100%;
+    width:100%;
+}
+
+#page_loader .tdiv .tdivC , #page_loader_nat .tdiv .tdivC{
+    display:table-cell;
+    vertical-align:middle;
+    text-align:center;
+    height:100%;
+}
+
+#page_loader .tdiv .tdivC span,  #page_loader_nat .tdiv .tdivC span{
+    margin-top: 32px;
+    display: inline-block;
+    position: relative;
+    color: #b7b7b7;
+}
+
+#unit_id, .nat_unit_it{
+    font-size: 1.5em;
+    font-weight: 500;
+    display: inline-block;
+    position: absolute;
+    bottom: 0px;
+    left: 219px;
+}
+#it_id, #nat_it_id{
+
+    font-size: 1.4em;
+    font-weight: 500;
+
+}
+#unit_id2{
+    font-size: 1.4em;
+    font-weight: 500;
+    display: inline-block;
+    position: absolute;
+    bottom: 0px;
+    left: 100px;
+}
+#it_id2{
+
+    font-size: 1.4em;
+    font-weight: 500;
+
+}
+
+
+
+.performance_value{
+    margin-top: 17px;
+}
+.img-logo{
+    width:100%;
+    text-align:left;
+}
+
+.img-logo img{
+    width:185px;
+}
+
+.logo_space{
+    height: 50px;
+}
+.login_extra_space{
+    height: 70px;
+}
+.logo_upper_space{
+    height: 10px;
+}
+fieldset.scheduler-border {
+    border: 1px groove #ddd !important;
+    padding: 0 1.4em 1.4em 1.4em !important;
+    margin: 0 0 1.5em 0 !important;
+    -webkit-box-shadow:  0px 0px 0px 0px #000;
+    box-shadow:  0px 0px 0px 0px #000;
+}
+
+legend.scheduler-border {
+    font-size: 1.2em !important;
+    font-weight: bold !important;
+    text-align: left !important;
+    width:auto;
+    padding:0 10px;
+    border-bottom:none;
+}
+.login_connect {
+    border-width: 2px;
+
+}
+.cpu_perfo_btn{
+    position: relative;
+    padding-top: 20px;
+}
+.btn_box{
+    border: 1px solid #ded7d7;
+    padding: 20px;
+    border-left: 3px solid #b9afaf;
+    border-top: 3px solid #b9afaf;
+}
+.divider_line{
+    border-top: 11px solid #d2c9c9;
+}
+.product_title{
+    font-size: 3.5vh;
+    font-weight: 600;
+}
+.radio_button_border{
+    border: 1px solid grey;
+    background: forestgreen;
+    width: 7.2em;
+    height: 7.2em;
+    padding-left: 0px;
+}
+.h4{
+    font-weight: 700;
+}
+.fig_title1 ,.fig_title2{
+    position: absolute;
+    margin-left: 33%;
+}
+.value_css{
+    text-align: center;
+}
+.fig_tag1{
+    border: 1px solid lightgrey;
+    padding-top: 4%;
+    padding-bottom: 2%;
+    width: 15.5em;
+    margin-left: 14%;
+    padding-left: 4%;
+}
+.code_frequency_box{
+    width: 69%;
+    float: right;
+}
+.go_button{
+    padding-top: 11px;
+}
+.go_button_success{
+    padding-left: 29px;
+    padding-right: 29px;
+    border-width: 2px;
+    background-color: #45dc45;
+    border-color: #2196F3;
+}
+.btn3_color{
+    background-color: chartreuse;
+    color: black;
+}
+
+.btn2_color{
+    background-color: skyblue;
+    color: black;
+    padding-left: 23px;
+    padding-right: 23px;
+}
+.btn1_color{
+    background-color: orange;
+    color: black;
+}
+.btn4_color_video{
+    background-color: orange;
+    width:95px;
+    cursor:pointer;
+}
+
+.btn_cursor{
+    cursor: text;
+}
+/*media query*/
+
+
+/* ----------- iPhone 4 and 4S ----------- */
+
+/* Portrait and Landscape */
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 480px)
+and (-webkit-min-device-pixel-ratio: 2) {
+    #unit_id2{
+        left: 184px;
+    }
+}
+
+/* Portrait */
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 480px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: portrait) {
+    #unit_id2{
+        left:149px;
+    }
+}
+
+/* Landscape */
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 480px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: landscape) {
+    #unit_id2{
+        left:220px;
+    }
+}
+
+/* ----------- iPhone 5 and 5S ----------- */
+
+/* Portrait and Landscape */
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 568px)
+and (-webkit-min-device-pixel-ratio: 2) {
+
+}
+
+/* Portrait */
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 568px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: portrait) {
+}
+
+/* Landscape */
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 568px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: landscape) {
+    #unit_id2{
+        left:230px;
+    }
+}
+
+/* ----------- iPhone 6 ----------- */
+
+/* Portrait and Landscape */
+@media only screen
+and (min-device-width: 375px)
+and (max-device-width: 667px)
+and (-webkit-min-device-pixel-ratio: 2) {
+}
+
+/* Portrait */
+@media only screen
+and (min-device-width: 375px)
+and (max-device-width: 667px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: portrait) {
+    #unit_id2{
+        left:160px;
+    }
+}
+
+/* Landscape */
+@media only screen
+and (min-device-width: 375px)
+and (max-device-width: 667px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: landscape) {
+    #unit_id2{
+        left:230px;
+    }
+}
+
+@media only screen
+and (min-device-width: 411px)
+and (max-device-width: 731px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: portrait) {
+    #unit_id2{
+        left:173px;
+    }
+}
+
+
+/* ----------- iPhone 6+ ----------- */
+
+/* Portrait and Landscape */
+@media only screen
+and (min-device-width: 414px)
+and (max-device-width: 736px)
+and (-webkit-min-device-pixel-ratio: 3) {
+
+}
+
+/* Portrait */
+@media only screen
+and (min-device-width: 414px)
+and (max-device-width: 736px)
+and (-webkit-min-device-pixel-ratio: 3)
+and (orientation: portrait) {
+    #unit_id2{
+
+        left:175px;
+    }
+}
+
+/* Landscape */
+@media only screen
+and (min-device-width: 414px)
+and (max-device-width: 736px)
+and (-webkit-min-device-pixel-ratio: 3)
+and (orientation: landscape) {
+    #unit_id2{
+        left:230px;
+    }
+}
+
+/* ----------- Galaxy S3 ----------- */
+
+/* Portrait and Landscape */
+@media screen
+and (device-width: 320px)
+and (device-height: 640px)
+and (-webkit-device-pixel-ratio: 2) {
+
+}
+
+/* Portrait */
+@media screen
+and (device-width: 320px)
+and (device-height: 640px)
+and (-webkit-device-pixel-ratio: 2)
+and (orientation: portrait) {
+
+}
+
+/* Landscape */
+@media screen
+and (device-width: 320px)
+and (device-height: 640px)
+and (-webkit-device-pixel-ratio: 2)
+and (orientation: landscape) {
+    #unit_id2{
+        left:230px;
+    }
+}
+
+
+/* ----------- Galaxy S5 ----------- */
+
+/* Portrait and Landscape */
+@media screen
+and (device-width: 360px)
+and (device-height: 640px)
+and (-webkit-device-pixel-ratio: 3) {
+
+
+
+}
+
+/* Portrait */
+@media screen
+and (device-width: 360px)
+and (device-height: 640px)
+and (-webkit-device-pixel-ratio: 3)
+and (orientation: portrait) {
+    #unit_id2{
+        left: 93px;
+    }
+}
+
+/* Landscape */
+@media screen
+and (device-width: 360px)
+and (device-height: 640px)
+and (-webkit-device-pixel-ratio: 3)
+and (orientation: landscape) {
+    #unit_id2{
+        left: 230px;
+    }
+}
+
+/* ----------- HTC One ----------- */
+
+/* Portrait and Landscape */
+@media screen
+and (device-width: 360px)
+and (device-height: 640px)
+and (-webkit-device-pixel-ratio: 3) {
+
+}
+
+/* Portrait */
+@media screen
+and (device-width: 360px)
+and (device-height: 640px)
+and (-webkit-device-pixel-ratio: 3)
+and (orientation: portrait) {
+
+}
+
+/* Landscape */
+@media screen
+and (device-width: 360px)
+and (device-height: 640px)
+and (-webkit-device-pixel-ratio: 3)
+and (orientation: landscape) {
+
+}
+
+/* ----------- iPad mini ----------- */
+
+/* Portrait and Landscape */
+@media only screen
+and (min-device-width: 768px)
+and (max-device-width: 1024px)
+and (-webkit-min-device-pixel-ratio: 1) {
+    #unit_id{
+        left: 179px;
+    }
+}
+
+
+
+
+
+/*@media only screen
+and (min-device-width: 318px)
+and (max-device-width: 420px) {
+    #unit_id2{
+        left: 150px;
+    }
+}
+
+
+@media only screen
+and (min-device-width: 420px)
+and (max-device-width: 520px) {
+    #unit_id2{
+        left: 184px;
+    }
+}
+
+@media only screen
+and (min-device-width: 520px)
+and (max-device-width: 620px) {
+    #unit_id2{
+        left: 245px;
+    }
+}
+
+@media only screen
+and (min-device-width: 620px)
+and (max-device-width: 750px) {
+    #unit_id2{
+        left: 280px;
+    }
+}
+
+@media all and (orientation:landscape) {
+    #unit_id2{
+        left: 312px;
+    }
+}*/
+
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 770px) {
+
+    .radio_button_border{
+        margin-top: 10px;
+    }
+    .go_button{
+
+        top: 10px;
+        margin-left: 34%;
+        padding: 0px;
+    }
+    .power_gauge{
+        width:50px;
+    }
+    .power_table{
+        margin-top: 16px;
+    }
+    .radio_button_border{
+        width:6.2em;
+        height: 5.2em;
+    }
+    .setHeight
+    {
+        height: 7.2em;
+    }
+
+    .login_connect{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .table_xs{
+        margin-top: 55px;
+    }
+    .modal-footer{
+        border-top:0px;
+    }
+    /*    #unit_id{
+            left: 198px;
+        } */
+    /*   #unit_id2{
+           left: 160px;
+             }    */
+}
+
+
+
+
+
+@media (max-width: 768px){
+     p.temp_css { position: relative; left: -31px;}
+     p.cpu_per_css { position: relative; left: -60px;}
+    .power_gauge{width:100%; text-align:center;}
+    .modal-footer{text-align:center !important;}
+    .modal-footer .btn-default{margin-top:10px;}
+    #circularGaugeContainer2{margin:0px auto; width:300px;}
+    #circularGaugeContainer3{margin:0px auto; width:300px;}
+    .fig_title1, .fig_title2 {position: relative;margin-left: 26px;}
+    .fig_tag1 {border: 1px solid lightgrey;padding:10px 0 3px 0;width:100%; margin-left:0;text-align: center;}
+    .img-logo{width:100%; text-align:center;}
+    .img-logo img{width:200px;}
+    .row {margin-right: -15px;margin-left: -15px;}
+    .go_button {top: 10px;margin-left: 0 !important;padding: 0px;}
+    .product_title {font-size: 26px;font-weight: 900; text-align:right;padding-top: 20px;}
+    .cpu_perfo_btn {text-align:right;}
+    .img-responsive {display: block;max-width: 100%;margin-top: 20px;}
+    .btn-box-nat{margin-top: 0px;}
+    .nat_unit_it{    bottom: 5px; left: 160px;}
+    .fig_title2_nat{ margin-left: 72px;
+}
+}
+@media (max-width: 640px){
+    .go_button {top:10px;margin-left:0;padding: 0px; text-align:center;}
+    .go_button  .btn-success{margin:auto;}
+}
+
+
+
+@media (max-width: 360px){
+    .product_title {font-size: 24px !important;font-weight: 900;text-align: right;}
+    .row {margin-right: -9px;margin-left: -15px;}
+    .displanone{display:none !important;}
+    .modal-footer{text-align:center !important;}
+    .modal-footer .btn-default{margin-top:10px;}
+    #circularGaugeContainer2{margin-left:-18px;}
+    #circularGaugeContainer3{margin-left:-18px;}
+    .cpu_perfo_btn {position: relative;padding-top: 20px;text-align: right;}
+    .img-logo{width:100%; text-align:center;}
+    .img-logo img{width:170px;}
+}
+@media (max-width: 320px){
+    .product_title {font-size: 20px !important;font-weight: 900;text-align: right;}
+    #circularGaugeContainer2{margin-left:-39px;}
+    #circularGaugeContainer3{margin-left:-39px;}
+}
+
+
+#chart-container2{
+    margin-top: 14px;
+}
+
+#chart-container2{
+    margin-top: 12px;
+}
+
+.cpu_per_css ,.temp_value{
+    text-align: center;
+}
+
+/* CSS of NAT html page */
+
+.btn-box-nat{
+    border: 1px solid #ded7d7;
+    padding: 20px;
+    border-left: 3px solid #b9afaf;
+    border-top: 3px solid #b9afaf;
+    padding-bottom: 52px;
+}
+
+#chart-container3{
+    margin-top: 25px;
+}
+
+.nat_cpu_per_css{
+    text-align: center;
+    margin-top: 13px;
+    padding-left: 18px;
+
+}
+.fig_title2_nat{
+    position: relative;
+}
+.modal_nat{
+    border-bottom: 0px;
+}
+@media (min-width: 768px){
+    .btn-box-nat{
+        /*  margin-top: 90px;  */
+        margin-left: 12px;
+    }
+
+}
+
+
+#smallModal_nat_ip .modal-dialog {
+    position: relative;
+    width: auto;
+    max-width: 600px;
+}
+#smallModal_nat_ip .modal-sm {
+    max-width: 300px;
+}
+
+@media (min-width: 768px) {
+    .modal-dialog {
+        margin: 30px auto;
+    }
+}
+@media (min-width: 320px) {
+    .modal-sm {
+        margin-right: auto;
+        margin-left: auto;
+    }
+}
+@media (min-width: 620px) {
+    .modal-dialog {
+        margin-right: auto;
+        margin-left: auto;
+    }
+}
+
+#smallModal_nat_login .error_loginmsg , #smallModal_nat_login .user1_name_error, #smallModal_nat_login .user1_pass_error,  #smallModal_nat_login .user2_name_error, #smallModal_nat_login .user2_pass_error, #smallModal_nat_ip .error_ipmsg, #smallModal_nat_ip .ip1_error, #smallModal_nat_ip .ip2_error {
+    color:red;
+}
+
+.temp_nat_css{
+    margin-top: 24px;
+}
+.setWhiteColor
+{
+    color: white;
+}
+.setCPU
+{
+margin-top: 38px !important;
+}
+
+@media (max-width: 768px)
+{
+    #nat_it_id
+{
+margin-right:73px;
+}
+}

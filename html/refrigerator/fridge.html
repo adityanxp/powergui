@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<!-- /* Copyright 2019 NXP
+
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions
+are met:
+1. Redistributions of source code must retain the above copyright
+   notice, this list of conditions and the following disclaimer.
+2. Redistributions in binary form must reproduce the above copyright
+   notice, this list of conditions and the following disclaimer in the
+   documentation and/or other materials provided with the distribution.
+3. Neither the name of the copyright holders nor the names of its
+   contributors may be used to endorse or promote products derived from
+   this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS  AND CONTRIBUTORS
+``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+A PARTICULAR PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR
+CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. */ -->
+
+<html lang="en">
+
+<head>
+    <title>NXP || Data Analytics</title>    
+    <link rel="icon" type="image/x-icon" href="assets/images/logo.png">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=7">
+<!--Core CSS Files-->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap-theme.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/Power-gui.css" />
+    <link rel="stylesheet" href="assets/css/styles.css" type="text/css">
+    <link rel="stylesheet" href="assets/css/media.css" type="text/css">
+    <style>
+
+        body
+        {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+        @media (max-width: 1024px) {
+                .row
+                {
+                    margin-right: -15px;
+                }
+            }
+        body.modal-open{
+            overflow: hidden;
+        }
+             .footer {
+             background-color: #f5f5f5;
+             padding-top: 0px;
+             padding-bottom: 0px;
+             bottom: 0;
+             position: fixed;
+             width: 100%;
+             font-weight: 300;
+             border-top: 1px solid #ccc;
+             z-index: 100;
+         }
+         .footer a {
+             padding-right: 10px;
+             padding-left: 10px;
+             border-right: 1px solid rgba(0, 0, 0, 0.4);
+             color: #6C6D70;
+         }
+         .container-fluid {
+             padding-right: 15px;
+             padding-left: 15px;
+             margin-right: auto;
+             margin-left: auto;
+         }
+         
+         
+         .page-heading .heading-side li {
+             display: inline-block;
+             font-size: 20px;
+             position: relative;
+             width: 45px;
+             height: 100%;
+             margin-right: 20px;
+             margin-top: -24px !important;
+         }
+         
+         
+         @media only screen and (max-width: 767px){
+         .main-wrapper .page-heading h3 {
+             display: block;
+             margin-top: 56px;
+             text-align: center !important;
+             margin-left: 20px;
+         }
+         }
+         @media only screen and (max-width: 1024px){
+         
+         #body_fridge
+        {
+            margin-top:10px;
+        }
+         }
+         
+         
+         li.left a {
+             padding-left: 17px;
+             /* border-left-color: #FFF !important; */
+             border-color: #FFF !important;
+             color: #428bca !important;
+             position: relative;
+             left: 19px;
+         }
+         
+         
+    </style>
+</head>
+
+<body style="overflow-x:hidden;background-color: #354957">
+
+  <div class="out-container row " id="header">
+            <div class="col-lg-2  text-center hidden-md hidden-sm hidden-xs" id="left">  
+                <aside class="sidebar-left">
+                        <ul class="sidenav text-center" >
+                          <li style="    border-right-color: black;
+                          border-right-style: solid;background-color: #354957;padding-bottom:7px;"><a href="../index.html">
+                              <img class="logotwice" src="assets/images/logo.png" alt="NXP" />
+                            <br><sub>version  2.0.0</sub></a>
+                           </li>
+                            <li style="margin-top:10px;"><a class="font17 " href="../CPU/cpu.html">
+                                    <img class="logotwice " src="assets/images/CPU-Performance.png" alt="NXP" />
+                                    <br><sub > CPU Performance</sub>
+                                </a></li>
+                                <li><a class="font17 active" href="../refrigerator/fridge.html">
+                                    <img class="logotwice active" src="assets/images/Data-Analytics.png" alt="NXP" />
+                                    <br><sub class="active text-center">Data Analytics</sub>
+                                </a></li>
+                                <!-- <li><a class="font17 " href="../sensor/sensor.html">
+                                        <img class="logotwice" src="assets/images/Data Analytics Generation 2.png" alt="NXP" />
+                                        <br><sub>Sensor Data Analytics</sub>
+                                    </a></li> -->
+                                <li><a class="font17" href="../ml/ml.html">
+                                        <img class="logotwice" src="assets/images/Machine-Learning-Video-Analytics.png" alt="NXP" />
+                                        <br><sub>Machine Learning/Video Analytics</sub>
+                                    </a></li>
+                                    <li><a class="font17 " href="../videovault/videovault.html">
+                                        <img class="logotwice" src="assets/images/Video-Vault.png" alt="NXP" />
+                                        <br><sub>Video Vault</sub>
+                                    </a></li>
+                          </ul>
+                </aside>
+            </div>
+
+            <div class="col-lg-10 col-md-12 col-sm-12 col-xs-12">
+                <div class="row" id="header_fridge">
+                        <div onclick=" $('body').addClass('modal-open');$('#nav-tab').show();" class="hidden-lg col-md-1 col-sm-1 col-xs-2 ">
+                                <div style=" height: 5px; background-color: black;margin: 6px 0;" ></div>
+                                <div style=" height: 5px; background-color: black;margin: 6px 0;" ></div>
+                                <div style=" height: 5px; background-color: black;margin: 6px 0;" ></div>
+                        </div>
+                        <div class="hidden-lg col-md-3 col-sm-3 col-xs-8 text-center "  >
+                                <h3>FRWY-LS1046A</h3>
+                            </div>
+                        <div class="col-lg-2 hidden-md hidden-sm hidden-xs text-left "  >
+                            <h3>FRWY-LS1046A</h3>
+                        </div>
+                            <div class="col-lg-10 hidden-md hidden-sm hidden-xs  text-center" >
+                                    <div class="col-lg-7   text-center" >
+                                            <h3>Data Analytics</h3>
+                                    </div>
+                                    <div class=" col-lg-2 ">
+                                            <a href="javascript:void(0)" class="btn btn-danger" onclick="window.open(window.location.origin + ':19999/');">Detailed CPU Anaylsis</a>
+                                    </div>
+                            </div>
+                            <div class="hidden-lg col-md-6 col-sm-4 col-xs-12  text-center" >
+                                    <h3>Data Analytics</h3>
+                            </div>
+                            <div class="hidden-lg col-md-2 col-sm-4 col-xs-12 text-center">
+                                    <a href="javascript:void(0)" class="btn btn-danger" onclick="window.open(window.location.origin + ':19999/');">Detailed CPU Anaylsis</a>
+                            </div>
+                </div>
+                
+                <div class="row" id="body_fridge">
+                        <!-- <div class="row" style="background-color: white"> -->
+      
+                                <div class=" col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center " style="margin-bottom: 10px;">                                                               
+                                 <ul class="nav nav-tabs">
+                                   <li class="active"><a href="fridge.html" style="font-weight: bold;font-size: 12px;">Cold Storage Data Analytics</a></li>
+                                   <li><a href="../sensor/sensor.html" style="font-weight: bold;font-size: 12px;">Sensor Data Analytics</a></li>
+                                 </ul>
+                                </div>
+                                <!-- <div class=" col-lg-2 col-md-3 col-sm-12 col-xs-12 "> </div> -->
+                            <!-- </div> -->
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center "  >
+                                <div class="main-wrapper">
+                                        <header class="page-heading">
+                                            <button class="btn btn-success start" style="float: left;
+						    margin-left: 10px;
+						    margin-top: 5px;"  id='start'>Start</button>
+                                            <button class="btn btn-danger stop" style="float: left;
+					                                                        margin-left: 30px;
+												                                                    margin-top: 5px;" id='start' onclick="stop()">Stop</button>
+                                            <!-- <h1>LS1012A-FRWY</h1>
+                                            <ul class="heading-side">
+                    
+                                                <li>
+                                                    <a href="javascript:void(0)" class="icon-man-user icon"></a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:void(0)" class="icon-download icon"></a>
+                                                </li>
+                                                
+                                            </ul> -->
+                                            <!-- <div class="mobile-dropdown">
+                                                    <a href="javascript:void(0)" class="user-logged"><i class="icon-man-user icon"></i></a>
+                                                <ul style="display: none;">
+                    
+                                                    <li>
+                                                        <a href="javascript:void(0)"><i class="icon-man-user icon"></i> NXP User</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="javascript:void(0)"><i class="icon-download icon"></i> Download</a>
+                                                    </li>
+                                                    <li class="logout">
+                                                        <a href="javascript:void(0)" onclick="logout()">Logout</a>
+                                                    </li>
+                                                </ul>
+                                            </div> -->
+                                        </header>
+                                        <div class="main-block w100">
+                                            <div class="top-filter w100">
+                                                <div class="w100 data-interval">
+                                                    <ul>
+                                                        <li>Average Data Collection Interval</li>
+                                                        <li>30 Seconds</li>
+                                                    </ul>
+                                                </div>
+                                                <ul class="w100">
+                                                    <!-- <li class="search">
+                                                            <i class="icon-magnifying-glass icon"></i>
+                                                            <input type="text" placeholder="Search">
+                                                        </li> -->
+                                                    <!-- <li><a class="button" href="http://192.168.1.82:19999/#menu_system_submenu_cpu;theme=slate;help=true" target="_blank">CPU</a></li> -->
+                                                    <li>
+                                                        <h4>CPU Utilization</h4>
+                                                        <div class="block-inner">
+                                                            <div id="cpuUtilization" style="height: 164px;"></div>
+                                                        </div>
+                                                        <!-- <div class="">
+                                                            <b><a href="javascript:void(0)" onclick="redirect()">Detailed CPU Anaylsis</a></b>
+                                                        </div> -->
+                                                    </li>
+                                                    <li class="get-fridge-info">
+                                                        <h4>Refrigerator Detailed Information</h4>
+                                                        <ul>
+                                                            <li>
+                                                                <div class="select-in">
+                                                                    <select name="select-fridge" id="asset">
+                    
+                                                                    </select>
+                                                                </div>
+                                                                <div class="select-in">
+                                                                    <select name="fridge-time" id="fridge-time">
+                                                                        <option value="1min">1 min</option>
+                                                                        <option value="5min">5 min</option>
+                                                                        <option value="30min" selected>30 min</option>
+                                                                        <option value="1hr">1 hr</option>
+                                                                        <option value="12hr">12 hr</option>
+                                                                        <option value="24hr">24 hr</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="select-in btn">
+                                                                    <button class="button" type="button" onclick="selectRrf()" id='getInfo'>Get Info</button>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="get-fridge-info">
+                                                        <!-- <h4>Average Data Collection Interval</h4> -->
+                                                        <h4>Number of Refrigerators</h4>
+                                                        <ul>
+                                                            <li class="average-time">
+                                                                <!-- <span>30 Seconds</span> -->
+                                                                <div class="select-in">
+                                                                    <select name="fridge-time" id="total-refrigerators">
+                                                                        <option value=""></option>
+                                                                        <option value="100">100</option>
+                                                                        <option value="200">200</option>
+                                                                        <option value="300">300</option>
+                                                                        <option value="400">400</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="select-in btn">
+                                                                    <button class="button" type="button" id="saveFridgeTime">Save</button>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="get-fridge-info">
+                                                        <!-- <h4>Average Data Collection Interval</h4> -->
+                                                        <h4>Number of Cores</h4>
+                                                        <ul>
+                                                            <li class="average-time">
+                                                                <!-- <span>30 Seconds</span> -->
+                                                                <div class="select-in">
+                                                                    <select name="cores" id="cores">
+                                                                        <option value="2">2 Cores</option>
+                                                                        <option value="4" selected>4 Cores</option>
+                                                                    </select>
+                                                                    <!-- <input type="text" value="1 Core" readonly> -->
+                                                                </div>
+                                                                <div class="select-in btn">
+                                                                    <button class="button" type="button" id="saveCoreNum" onclick="saveCores()">Save</button>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                    <!-- <li><a href="javascript:void(0)" class="icon-menu icon"></a></li> -->
+                                                </ul>
+                                                <!-- <button type="submit" onclick="selectFridge()" class="btn btn-primary" id="select-fridge">Click Here</button> -->
+                                            </div>
+                                            <div class="working-area w100">
+                                                <div class="history-info">
+                                                    <h4>Device Analysis</h4>
+                                                    <div class="device-analysis w100">
+                    
+                                                        <div class="block-inner w100" id="ana">
+                                                            <h5>Refrigerator
+                                                                <span class="FridgeDeviceAnalysis"></span>
+                                                            </h5>
+                                                            <ul>
+                                                                <li>Number of times door opened in last
+                                                                    <span class="timeDeviceAnalysis"></span>
+                                                                </li>
+                                                                <li>
+                                                                    <span class="doorDeviceAnalysis"></span> time(s)</li>
+                                                            </ul>
+                                                            <ul id="refig-status">
+                                                                <li>Refrigerator Status</li>
+                                                                <li id="refrigeratorStatus"></li>
+                                                            </ul>
+                                                            <!-- <p class="refig-status w100">Warning</p> -->
+                                                        </div>
+                                                    </div>
+                                                    <div class="line-chart w100">
+                                                        <!-- <h4>History</h4> -->
+                                                        <div class="block-inner">
+                                                            <!-- <img src="assets/img/history-chart.png" alt="History Chart"> -->
+                                                            <div id="tempChart"></div>
+                                                            <!-- <div class="button" click="addVal()"></div> -->
+                                                        </div>
+                                                    </div>
+                                                    <div class="prediction w100">
+                                                        <!-- <div class="predictive-state">
+                                                            <h4>State</h4>
+                                                            <div class="block-inner">
+                                                                <div class="state-icon">
+                                                                    <i class="icon icon-danger"></i>
+                                                                </div>
+                                                                <p>This internal temperature of below device(s) is approaching the high warning
+                                                                    limit.
+                                                                </p>
+                                                                <div id="high-alert">
+                                                                    <ul></ul>
+                                                                </div>
+                                                            </div>
+                                                        </div> -->
+                                                        <div class="accuracy">
+                                                            <h4>Total Refrigeration Status</h4>
+                                                            <div class="block-inner">
+                                                                <div id="accuracyChart" style="height: 181px; margin: 0 auto"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="real-time-info">
+                                                    <div class="fridge-status w100">
+                                                        <h4>Refrigerator Status</h4>
+                                                        <div class="block-inner w100 fridge-status-in">
+                                                            <div class="block-quad internal-temp temp">
+                                                                <h5>Internal Temperature</h5>
+                                                                <div class="status-in">
+                                                                    <div class="block-inner">
+                                                                        <div id="int-temp">
+                    
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="block-quad external-temp temp">
+                                                                <h5>External Temperature</h5>
+                                                                <div class="status-in">
+                                                                    <div class="block-inner">
+                                                                        <div id="ext-temp">
+                    
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="block-quad set-point">
+                                                                <h5>Set Point</h5>
+                                                                <div class="status-in">
+                                                                    <div class="block-inner">
+                                                                        <span>4&deg;C</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="block-quad door-state">
+                                                                <h5>Door State</h5>
+                                                                <div class="status-in">
+                                                                    <div class="block-inner w100">
+                                                                        <ul class="w100" id="fridge-state">
+                    
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="alert-history w100">
+                                                        <h4>Alert History</h4>
+                                                        <div class="block-inner" id="alert-history-in">
+                                                            <ul class="alert-history-head">
+                                                                <li>Report Time</li>
+                                                                <li>Alert</li>
+                                                            </ul>
+                                                            <!-- <ul class="alert-history-body">
+                                                                        <li>12/14/2017 2:15:50 PM</li>
+                                                                        <li>Internal temperature high error</li>
+                                                                    </ul>
+                                                                    <ul class="alert-history-body">
+                                                                        <li>12/14/2017 2:15:50 PM</li>
+                                                                        <li>Internal temperature high error</li>
+                                                                    </ul>
+                                                                    <ul class="alert-history-body">
+                                                                        <li>12/14/2017 2:15:50 PM</li>
+                                                                        <li>Internal temperature high error</li>
+                                                                    </ul> -->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                    
+                                                <!-- <div class="device-info w100">
+                                                    <ul class="device-information">
+                                                        <li>
+                                                            <h4>Device Information</h4>
+                                                            <div class="block-inner">
+                                                                <ul>
+                                                                    <li>
+                                                                        <h5>Device Name</h5>
+                                                                        <p>12/14/2017 2:15:50 PM</p>
+                                                                    </li>
+                                                                    <li>
+                                                                        <h5>Organization</h5>
+                                                                        <p>NXP</p>
+                                                                    </li>
+                                                                    <li>
+                                                                        <h5>Last Report Time</h5>
+                                                                        <p>11/29/2017 9:13:18 PM</p>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div> -->
+                                            </div>
+                                            <div class="overlay">&nbsp;</div>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+
+            </div>
+                        
+            <div id="nav-tab" class="modal fade session "  role="dialog" data-backdrop="static" data-keyboard="false">
+                    <div class="modal-lg padding-top-140" style="margin-top:-260px;">
+                        <!-- Modal content-->
+                        <div class="removeModal">
+                            <div class="modal-body">
+                                    <div style="height: -webkit-fill-available;
+                                    overflow: scroll; display: block">
+                                    <aside class="sidebar-left">
+                                            <ul class="sidenav text-center" >
+                                              <li style="    border-right-color: black;
+                                              border-right-style: solid;background-color: #354957;padding-bottom:7px;"><a href="../index.html">
+                                                  <img class="logotwice" src="assets/images/logo.png" alt="NXP" />
+                                                <br><sub>version  2.0.0</sub></a>
+                                               </li>
+                                                <li style="margin-top:10px;"><a class="font17 " href="../CPU/cpu.html">
+                                                        <img class="logotwice " src="assets/images/CPU-Performance.png" alt="NXP" />
+                                                        <br><sub > CPU Performance</sub>
+                                                    </a></li>
+                                                    <li><a class="font17 active" href="../refrigerator/fridge.html">
+                                                        <img class="logotwice active" src="assets/images/Data-Analytics.png" alt="NXP" />
+							                        <br><sub class="active text-center">Data Analytics</sub>
+                                                    </a></li>
+                                                    <!-- <li><a class="font17 " href="../sensor/sensor.html">
+                                                            <img class="logotwice" src="assets/images/Data Analytics Generation 2" alt="NXP" />
+                                                            <br><sub>Sensor Data Analytics</sub>
+                                                        </a></li> -->
+                                                    <li><a class="font17" href="../ml/ml.html">
+                                                            <img class="logotwice" src="assets/images/Machine-Learning-Video-Analytics.png" alt="NXP" />
+                                                            <br><sub>Machine Learning/Video Analytics</sub>
+                                                        </a></li>
+                                                        <li><a class="font17 " href="../videovault/videovault.html">
+                                                            <img class="logotwice" src="assets/images/Video-Vault.png" alt="NXP" />
+                                                            <br><sub>Video Vault</sub>
+                                                        </a></li>
+                                                            <li style="margin:10px;"><button class="font17 btn btn-warning" onclick=" $('body').removeClass('modal-open');$('#nav-tab').hide();">EXIT</button>
+                                            
+                                              </ul>
+                                    </aside>	
+                                    </div>							
+                            </div>
+                        </div>
+                    </div>
+                </div>
+  </div>
+
+    <!--Core Javascript Files-->
+    <script type="text/javascript" src="assets/js/jquery.js"></script>
+    <script src="assets/js/highcharts/highcharts.js"></script>
+    <script src="assets/js/highcharts/highcharts-more.js"></script>
+    <script src="assets/js/highcharts/solid-gauge.js"></script>
+    <script type="text/javascript" src="assets/js/api.js"></script>
+    <script type="text/javascript" src="assets/js/moment.js"></script>
+    <script type="text/javascript" src="assets/js/custom.js"></script>
+
+    <script src="assets/js/highcharts/chart-custom.js"></script>
+    <script>
+        var fridgeNo = 1,
+            fridgeTime = 30,
+            defaultRefreshTime = 30000,
+            timeInterval, newFridgeNumber = 200;
+	    var pressStart = false;
+        //checkLogin();
+
+        $(document).ready(function () {
+            $.ajax({
+                    url: "http://" + window.location.host + "/network.php?val=9",
+                    cache: false,
+                    success: function(data){
+
+                    },
+                    error:function(data){
+                       // console.log("error"+data);
+                    }
+                });
+                
+                $('.stop').attr('disabled', true);
+	            $('#getInfo').attr('disabled', true);
+                $('#saveFridgeTime').attr('disabled', true);
+             checkStart();
+           
+            $('#start').attr('disabled', false);
+            $('#start').on('click', function () {
+                $('.stop').attr('disabled', false);
+                $('.start').attr('disabled', true);
+                $('#total-refrigerators').find('option')[0].remove();
+                $('#total-refrigerators').find('option[selected="selected"]').removeAttr('selected');
+                $('#total-refrigerators').find('option[value=' + newFridgeNumber + ']').attr('selected', true);
+                $.get('demo.php', { val: 5 }, function (response) {
+                });
+                $('.overlay').hide();
+                $('#start').attr('disabled', true);
+		pressStart = true;
+                start();
+            });
+
+            $('#saveFridgeTime').on('click', function () {
+                newFridgeNumber = $('#total-refrigerators').find('option:selected').val();
+                //defaultRefreshTime = parseInt(newFridgeTime) * 5000;
+                newFridgeNumber = parseInt(newFridgeNumber);
+                sendNoFridge(newFridgeNumber);
+                // clearInterval(timeInterval);
+                // startInterval(defaultRefreshTime);
+            });
+
+            // getCpuData();
+        });
+    </script>
+</body>
+
+</html>
